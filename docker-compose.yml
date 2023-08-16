@@ -1,0 +1,42 @@
+version: '3.8'
+services:
+    main:
+        container_name: Serve
+        build:
+            context: .
+            dockerfile: Dockerfile
+        command: 'php artisan serve --host=0.0.0.0'
+        volumes:
+            - .:/app
+        ports:
+            - 8000:8000
+
+    db:
+        image: mariadb:10.6
+        environment:
+            MYSQL_DATABASE: "${DB_DATABASE}"
+            MYSQL_USER: "${DB_USERNAME}"
+            MYSQL_PASSWORD: "${DB_PASSWORD}"
+            MYSQL_ROOT_PASSWORD: notSecureChangeMe
+        volumes:
+            - db:/var/lib/mysql
+
+    phpmyadmin:
+        image: phpmyadmin
+        links:
+            - db
+        environment:
+            PMA_HOST: db
+            PMA_PORT: 3306
+            PMA_ARBITRARY: 1
+        restart: always
+        ports:
+            - 8081:80
+
+networks:
+    laravel-exa:
+        driver: bridge
+
+volumes:
+    db:
+        driver: local
