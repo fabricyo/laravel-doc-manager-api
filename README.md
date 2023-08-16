@@ -28,6 +28,9 @@ PhpMyAdmin login:
  - pass:
    - notSecureChangeMe
 
+## Document
+The document info is based on the column_document relationship
+You can use any columns that you want, but, only if it's of the same type of the document
 
 ## Using Postman
 - Add to headers, in the Accept key, the value application/json
