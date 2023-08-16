@@ -30,7 +30,7 @@ PhpMyAdmin login:
 
 
 ## Using Postman
-Add to headers, in the Accept key, the value application/json
+- Add to headers, in the Accept key, the value application/json
 
 
 Managing the document is a little bit complex, so this some examples
