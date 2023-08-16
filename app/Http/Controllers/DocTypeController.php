@@ -8,6 +8,12 @@ use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
+
+/**
+ * @group Document Types
+ *
+ * APIs for managing the Documents Types, the base of the API
+ */
 class DocTypeController extends Controller
 {
     /**
@@ -19,7 +25,18 @@ class DocTypeController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a new document type.
+     * @bodyParam name string required An unique name of the document type. Example: Personal Info
+     * @bodyParam active boolean If the document is to be created deactivated. Example: 0
+     *
+     * @response {
+     *  "message": "Document type created successfully!!",
+     *  "data": {
+     *  "name": "Personal Info",
+     *  "updated_at": "2023-08-16T22:03:20.000000Z",
+     *  "created_at": "2023-08-16T22:03:20.000000Z",
+     *  "id": 1
+     * }
      */
     public function store(Request $request)
     {
@@ -41,7 +58,17 @@ class DocTypeController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified document type.
+     * @urlParam id int required The document type id
+     *
+     * @response {
+     * "id": 1,
+     * "created_at": "2023-08-16T22:03:20.000000Z",
+     * "updated_at": "2023-08-16T22:03:20.000000Z",
+     * "deleted_at": null,
+     * "name": "Personal Info",
+     * "active": 1
+     * }
      */
     public function show(string $id)
     {
@@ -56,10 +83,18 @@ class DocTypeController extends Controller
         }
     }
 
-    //URL: put
-
     /**
-     * Update the specified resource in storage.
+     * Update the specified document type.
+     * @bodyParam name string An Unique name of the document type. Example: Personal Info
+     * @bodyParam active boolean Toggle documentation type. Example: 0
+     * @response {
+     * "id": 1,
+     * "created_at": "2023-08-16T22:03:20.000000Z",
+     * "updated_at": "2023-08-16T22:09:28.000000Z",
+     * "deleted_at": null,
+     * "name": "Personal Info",
+     * "active": "0"
+     * }
      */
     public function update(Request $request, string $id)
     {
@@ -80,7 +115,13 @@ class DocTypeController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified document type from storage.
+     *
+     * <aside class="warning">Document Type is softdeleted. ❗️</aside>
+     *
+     * @response {
+     * "message": "Document type deleted successfully!!"
+     * }
      */
     public function destroy(string $id)
     {

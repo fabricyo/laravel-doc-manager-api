@@ -21,13 +21,7 @@ use Barryvdh\DomPDF\Facade\Pdf;
 class DocumentController extends Controller
 {
     /**
-     * Index
-     *
-     * This endpoint is used to see all documents in the system.
-     *
-     * @response scenario="JsonResponse" {
-     * "data": ['all the documents in the system'],
-     * }
+     * Display a listing of the Documents.
      */
 
     public function index(): \Illuminate\Http\JsonResponse
@@ -36,12 +30,28 @@ class DocumentController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a new Document.
+     * @bodyParam name string required An unique name of the document. Example: My first Document
+     * @bodyParam document_types_id int required An valid document type id. Example: 1
+     * @bodyParam column object[] required List of Column id and content
+     * @bodyParam column[].id int required An valid column_id of the same document type. Example: 1
+     * @bodyParam column[].content string required The info that will be stored. Example: Nicolas
+     *
+     * @response {
+     * "message": "Document created successfully!!",
+     * "data": {
+     * "name": "My fourth document",
+     * "document_types_id": "1",
+     * "updated_at": "2023-08-16T22:37:26.000000Z",
+     * "created_at": "2023-08-16T22:37:26.000000Z",
+     * "id": 4
+     * }
+     * }
      */
     public function store(Request $request): \Illuminate\Http\JsonResponse
     {
         $this->validate($request, [
-            'name' => 'required|unique:documents|min:3',
+            'name' => 'required|unique:documents,name|min:3',
             'document_types_id' => 'required|exists:document_types,id',
             'column' => 'required|array',
             'column.*.id' => [
@@ -58,7 +68,7 @@ class DocumentController extends Controller
             foreach ($request->input('column') as $column){
                 $col_doc = ColumnDocument::create([
                     'column_id' => $column['id'],
-                    'document_id' => $column->id,
+                    'document_id' => $model->id,
                     'content' => $column['content'],
                     ]);
             }
@@ -69,12 +79,39 @@ class DocumentController extends Controller
             ]);
         } catch (\Exception $e){
             Log::error($e);
+            echo $e;
             return response()->json(['error' => 'server error, try again'], 500);
         }
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified document.
+     * @urlParam id int required The document id
+     *
+     * <aside class="notice">rel_id of each data, is what you use to update the document data. 👍🏻</aside>
+     *
+     * @response {
+     * "id": 1,
+     * "created_at": "2023-08-16T22:35:09.000000Z",
+     * "updated_at": "2023-08-16T22:35:09.000000Z",
+     * "name": "My first document",
+     * "document_types_id": 1,
+     * "data": [
+     * {
+     * "name": "First name",
+     * "content": "Jonh",
+     * "rel_id": 1
+     * }
+     * ],
+     * "document_type": {
+     * "id": 1,
+     * "created_at": "2023-08-16T22:03:20.000000Z",
+     * "updated_at": "2023-08-16T22:12:53.000000Z",
+     * "deleted_at": "2023-08-16T22:12:53.000000Z",
+     * "name": "Personal Info",
+     * "active": 0
+     * }
+     * }
      */
     public function show(string $id): \Illuminate\Http\JsonResponse
     {
@@ -93,11 +130,11 @@ class DocumentController extends Controller
     /**
      * Download one document
      *
-     * This endpont will download an document with all it's values as a pdf
+     * This endpont will download a document with all it's values as a pdf
      *
-     * @bodyParam id The Document id
+     * @bodyParam id The document id
      *
-     * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\Response
+     * @response The Document formatted in a pretty pdf
      */
     public function download(Request $request, $id)
     {
