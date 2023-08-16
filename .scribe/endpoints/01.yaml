@@ -1,21 +1,21 @@
-name: Documents
+name: Columns
 description: |-
 
-  APIs for managing Documents
+  APIs for managing the Columns, necessary for creating a document
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/document
+    uri: api/column
     metadata:
-      groupName: Documents
+      groupName: Columns
       groupDescription: |-
 
-        APIs for managing Documents
+        APIs for managing the Columns, necessary for creating a document
       subgroup: ''
       subgroupDescription: ''
-      title: Index
-      description: 'This endpoint is used to see all documents in the system.'
+      title: 'Display a listing of the Columns.'
+      description: ''
       authenticated: false
       custom: []
     headers:
@@ -31,12 +31,14 @@ endpoints:
     responses:
       -
         status: 200
-        content: |-
-          {
-          "data": ['all the documents in the system'],
-          }
-        headers: []
-        description: JsonResponse
+        content: '[{"id":1,"created_at":"2023-08-16T22:21:59.000000Z","updated_at":"2023-08-16T22:28:14.000000Z","deleted_at":null,"name":"First name","document_types_id":1,"document_type":null}]'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '58'
+          access-control-allow-origin: '*'
+        description: null
         custom: []
     responseFields: []
     auth: []
@@ -47,15 +49,15 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/document
+    uri: api/column
     metadata:
-      groupName: Documents
+      groupName: Columns
       groupDescription: |-
 
-        APIs for managing Documents
+        APIs for managing the Columns, necessary for creating a document
       subgroup: ''
       subgroupDescription: ''
-      title: 'Store a newly created resource in storage.'
+      title: 'Store a new Column.'
       description: ''
       authenticated: false
       custom: []
@@ -69,47 +71,38 @@ endpoints:
     bodyParameters:
       name:
         name: name
-        description: 'Must be at least 3 characters.'
+        description: 'An unique name of the document type.'
         required: true
-        example: yqirycaopendj
+        example: 'First name'
         type: string
         custom: []
       document_types_id:
         name: document_types_id
-        description: ''
+        description: 'An valid document type id.'
         required: true
-        example: fuga
-        type: string
-        custom: []
-      column:
-        name: column
-        description: ''
-        required: true
-        example:
-          - quasi
-        type: 'string[]'
-        custom: []
-      'column[].id':
-        name: 'column[].id'
-        description: ''
-        required: true
-        example: incidunt
-        type: string
-        custom: []
-      'column[].content':
-        name: 'column[].content'
-        description: 'Must be at least 3 characters.'
-        required: true
-        example: mrwpsjmawekxysnhqr
-        type: string
+        example: 3
+        type: integer
         custom: []
     cleanBodyParameters:
-      name: yqirycaopendj
-      document_types_id: fuga
-      column:
-        - quasi
+      name: 'First name'
+      document_types_id: 3
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+          "message": "Column created successfully!!",
+          "data": {
+          "name": "First name",
+          "document_types_id": "1",
+          "updated_at": "2023-08-16T22:21:59.000000Z",
+          "created_at": "2023-08-16T22:21:59.000000Z",
+          "id": 1
+          }
+        headers: []
+        description: ''
+        custom: []
     responseFields: []
     auth: []
     controller: null
@@ -119,15 +112,15 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/document/{id}'
+    uri: 'api/column/{id}'
     metadata:
-      groupName: Documents
+      groupName: Columns
       groupDescription: |-
 
-        APIs for managing Documents
+        APIs for managing the Columns, necessary for creating a document
       subgroup: ''
       subgroupDescription: ''
-      title: 'Display the specified resource.'
+      title: 'Display the specified column.'
       description: ''
       authenticated: false
       custom: []
@@ -137,13 +130,13 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the document.'
+        description: 'The column id'
         required: true
-        example: recusandae
-        type: string
+        example: 13
+        type: integer
         custom: []
     cleanUrlParameters:
-      id: recusandae
+      id: 13
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -151,15 +144,18 @@ endpoints:
     fileParameters: []
     responses:
       -
-        status: 400
-        content: '{"error":"Document not found"}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '55'
-          access-control-allow-origin: '*'
-        description: null
+        status: 200
+        content: |-
+          {
+          "id": 1,
+          "created_at": "2023-08-16T22:21:59.000000Z",
+          "updated_at": "2023-08-16T22:21:59.000000Z",
+          "deleted_at": null,
+          "name": "First name",
+          "document_types_id": 1
+          }
+        headers: []
+        description: ''
         custom: []
     responseFields: []
     auth: []
@@ -171,15 +167,15 @@ endpoints:
     httpMethods:
       - PUT
       - PATCH
-    uri: 'api/document/{id}'
+    uri: 'api/column/{id}'
     metadata:
-      groupName: Documents
+      groupName: Columns
       groupDescription: |-
 
-        APIs for managing Documents
+        APIs for managing the Columns, necessary for creating a document
       subgroup: ''
       subgroupDescription: ''
-      title: 'Update the specified resource in storage.'
+      title: 'Update the specified column.'
       description: ''
       authenticated: false
       custom: []
@@ -189,57 +185,56 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the document.'
+        description: 'The ID of the column.'
         required: true
-        example: 19
+        example: 1
         type: integer
         custom: []
     cleanUrlParameters:
-      id: 19
+      id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
       name:
         name: name
+        description: 'An Unique name of the column.'
+        required: false
+        example: 'Full name'
+        type: string
+        custom: []
+      document_types_id:
+        name: document_types_id
         description: ''
         required: false
         example: null
         type: string
         custom: []
-      column:
-        name: column
-        description: ''
+      active:
+        name: active
+        description: 'Toggle column.'
         required: false
-        example:
-          - ad
-        type: 'string[]'
-        custom: []
-      'column[].rel_id':
-        name: 'column[].rel_id'
-        description: 'This field is required when <code>column.*.id</code> is <code>=</code> or <code>null</code>.'
-        required: false
-        example: null
-        type: string
-        custom: []
-      'column[].id':
-        name: 'column[].id'
-        description: 'This field is required when <code>column.*.content</code> is <code>!=</code> or <code>null</code>.'
-        required: false
-        example: null
-        type: string
-        custom: []
-      'column[].content':
-        name: 'column[].content'
-        description: 'Must be at least 3 characters.'
-        required: false
-        example: jgjgzdqbaoflhbqecbvcjphhprrhnvlxffoufhyipv
-        type: string
+        example: false
+        type: boolean
         custom: []
     cleanBodyParameters:
-      column:
-        - ad
+      name: 'Full name'
+      active: false
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+          "id": 1,
+          "created_at": "2023-08-16T22:21:59.000000Z",
+          "updated_at": "2023-08-16T22:25:36.000000Z",
+          "deleted_at": null,
+          "name": "Full name",
+          "document_types_id": 1
+          }
+        headers: []
+        description: ''
+        custom: []
     responseFields: []
     auth: []
     controller: null
@@ -249,16 +244,16 @@ endpoints:
   -
     httpMethods:
       - DELETE
-    uri: 'api/document/{id}'
+    uri: 'api/column/{id}'
     metadata:
-      groupName: Documents
+      groupName: Columns
       groupDescription: |-
 
-        APIs for managing Documents
+        APIs for managing the Columns, necessary for creating a document
       subgroup: ''
       subgroupDescription: ''
-      title: 'Remove the specified resource from storage.'
-      description: ''
+      title: 'Remove the specified column from storage.'
+      description: '<aside>Column is softdeleted. ❗️</aside>'
       authenticated: false
       custom: []
     headers:
@@ -267,77 +262,27 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the document.'
+        description: 'The ID of the column.'
         required: true
-        example: 18
+        example: 1
         type: integer
         custom: []
     cleanUrlParameters:
-      id: 18
+      id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
-    uri: 'api/document/{id}/download'
-    metadata:
-      groupName: Documents
-      groupDescription: |-
-
-        APIs for managing Documents
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Download one document'
-      description: "This endpont will download an document with all it's values as a pdf"
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the document.'
-        required: true
-        example: 17
-        type: integer
-        custom: []
-    cleanUrlParameters:
-      id: 17
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      id:
-        name: id
-        description: 'Document id'
-        required: false
-        example: est
-        type: The
-        custom: []
-    cleanBodyParameters:
-      id: est
-    fileParameters: []
     responses:
       -
-        status: 400
-        content: '{"error":"Document not found"}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '54'
-          access-control-allow-origin: '*'
-        description: null
+        status: 200
+        content: |-
+          {
+          "message": "Column deleted successfully!!"
+          }
+        headers: []
+        description: ''
         custom: []
     responseFields: []
     auth: []

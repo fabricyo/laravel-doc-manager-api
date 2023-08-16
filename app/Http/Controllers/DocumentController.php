@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Validation\Rule;
 use Barryvdh\DomPDF\Facade\Pdf;
+use Illuminate\Validation\ValidationException;
 
 
 /**
@@ -132,8 +133,6 @@ class DocumentController extends Controller
      *
      * This endpont will download a document with all it's values as a pdf
      *
-     * @bodyParam id The document id
-     *
      * @response The Document formatted in a pretty pdf
      */
     public function download(Request $request, $id)
@@ -152,39 +151,60 @@ class DocumentController extends Controller
 
     }
 
-    //URL: put
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified document.
+     *
+     * @bodyParam name string An unique name of the document. Example: My first Document
+     * @bodyParam column object[] required List of Column id and content
+     * @bodyParam column[].id int An valid column_id of the same document type, required if it's a new info. Example: 1
+     * @bodyParam column[].rel_id int  An valid column_document id, required if it's updating an existing info.
+     * this can be retrieved using the get document/{id} endpoint can bem Example: 5
+     * @bodyParam column[].content string The info that will be stored, required if it's creating/updating a document info. Example: Nicolas
+     *
+     * @response {
+     * "id": 1,
+     * "created_at": "2023-08-16T22:35:09.000000Z",
+     * "updated_at": "2023-08-16T23:18:06.000000Z",
+     * "name": "My first document",
+     * "document_types_id": 1,
+     * "data": [
+     * {
+     * "name": "First name",
+     * "content": "Yasmin",
+     * "rel_id": 1
+     * }
+     * ]
+     *  }
      */
     public function update(Request $request, string $id): \Illuminate\Http\JsonResponse
     {
-        $model = Document::findOrFail($id);
-        //As this is a complex many-to-many relationship, the validation must be as well
-        $this->validate($request, [
-            'name' => 'min:3|unique:documents,name,'. $id,
-            'column' => 'array',
-            'column.*.rel_id' => [
-                'required_if:column.*.id,=,null',
-                Rule::exists('column_document', 'id')->where('document_id', $id)
-            ],
-            'column.*.id' => [
-                'required_if:column.*.content,!=,null',
-                'distinct',
-                'exists:columns,id',
-                new RightTypeOfColums($model->document_types_id),
-                //Can't add 2 equals columns to the same document
-                Rule::unique('column_document', 'column_id')->where('document_id', $id)
-            ],
-            'column.*.content' => [
-                'string',
-                'min:3',
-                Rule::requiredIf(function() use ($request) {
-                    return ($request->input('column.*.rel_id') || $request->input('column.*.id'));
-                })
-            ]
-        ]);
         try{
+            $model = Document::findOrFail($id);
+            //As this is a complex many-to-many relationship, the validation must be as well
+            $this->validate($request, [
+                'name' => 'min:3|unique:documents,name,'. $id,
+                'column' => 'array',
+                'column.*.rel_id' => [
+                    'required_if:column.*.id,=,null',
+                    Rule::exists('column_document', 'id')->where('document_id', $id)
+                ],
+                'column.*.id' => [
+                    'required_if:column.*.content,!=,null',
+                    'distinct',
+                    'exists:columns,id',
+                    new RightTypeOfColums($model->document_types_id),
+                    //Can't add 2 equals columns to the same document
+                    Rule::unique('column_document', 'column_id')->where('document_id', $id)
+                ],
+                'column.*.content' => [
+                    'string',
+                    'min:3',
+                    Rule::requiredIf(function() use ($request) {
+                        return ($request->input('column.*.rel_id') || $request->input('column.*.id'));
+                    })
+                ]
+            ]);
             $model->fill($request->only(['name']))->update();
             if($request->input('column')){
                 foreach ($request->input('column') as $column){
@@ -210,8 +230,10 @@ class DocumentController extends Controller
 
             $model->data = $model->resumed();
             return response()->json($model);
-        } catch(ModelNotFoundException $e){
+        } catch(ModelNotFoundException $e) {
             return response()->json(['error' => 'Document not found'], 400);
+        } catch(ValidationException $e){
+            return response()->json($e->errors());
         } catch (\Exception $e){
             Log::error($e);
             return response()->json(['error' => 'server error, try again'], 500);
@@ -219,7 +241,22 @@ class DocumentController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified document.
+     *
+     * <aside class="warning">Document IS NOT softdeleted. ❗️</aside>
+     *
+     * You can delete only a column data of the document
+     * using rel_id => column_document relationship id, this can be retrieved using the get document/{id} endpoint
+     *
+     * using rel_id will not trigger the document delete
+     *
+     *
+     * @urlParam  id int required The id of the document. Example: 9
+     * @bodyParam rel_id int The column_document relationship id
+     *
+     * @response {
+     * "message": "Document deleted successfully!!"
+     * }
      */
     public function destroy(Request $request, string $id): \Illuminate\Http\JsonResponse
     {

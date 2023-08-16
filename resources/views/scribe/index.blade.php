@@ -27,12 +27,6 @@
                     body .content .python-example code { display: none; }
             </style>
 
-    <script>
-        var tryItOutBaseUrl = "http://localhost";
-        var useCsrf = Boolean();
-        var csrfUrl = "/sanctum/csrf-cookie";
-    </script>
-    <script src="{{ asset("/vendor/scribe/js/tryitout-4.22.0.js") }}"></script>
 
     <script src="{{ asset("/vendor/scribe/js/theme-default-4.22.0.js") }}"></script>
 
@@ -70,68 +64,72 @@
                     <a href="#authenticating-requests">Authenticating requests</a>
                 </li>
                             </ul>
+                    <ul id="tocify-header-columns" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="columns">
+                    <a href="#columns">Columns</a>
+                </li>
+                                    <ul id="tocify-subheader-columns" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="columns-GETapi-column">
+                                <a href="#columns-GETapi-column">Display a listing of the Columns.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="columns-POSTapi-column">
+                                <a href="#columns-POSTapi-column">Store a new Column.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="columns-GETapi-column--id-">
+                                <a href="#columns-GETapi-column--id-">Display the specified column.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="columns-PUTapi-column--id-">
+                                <a href="#columns-PUTapi-column--id-">Update the specified column.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="columns-DELETEapi-column--id-">
+                                <a href="#columns-DELETEapi-column--id-">Remove the specified column from storage.</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
+                    <ul id="tocify-header-document-types" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="document-types">
+                    <a href="#document-types">Document Types</a>
+                </li>
+                                    <ul id="tocify-subheader-document-types" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="document-types-GETapi-doctype">
+                                <a href="#document-types-GETapi-doctype">Display a listing of the resource.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="document-types-POSTapi-doctype">
+                                <a href="#document-types-POSTapi-doctype">Store a new document type.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="document-types-GETapi-doctype--id-">
+                                <a href="#document-types-GETapi-doctype--id-">Display the specified document type.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="document-types-PUTapi-doctype--id-">
+                                <a href="#document-types-PUTapi-doctype--id-">Update the specified document type.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="document-types-DELETEapi-doctype--id-">
+                                <a href="#document-types-DELETEapi-doctype--id-">Remove the specified document type from storage.</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
                     <ul id="tocify-header-documents" class="tocify-header">
                 <li class="tocify-item level-1" data-unique="documents">
                     <a href="#documents">Documents</a>
                 </li>
                                     <ul id="tocify-subheader-documents" class="tocify-subheader">
                                                     <li class="tocify-item level-2" data-unique="documents-GETapi-document">
-                                <a href="#documents-GETapi-document">Index</a>
+                                <a href="#documents-GETapi-document">Display a listing of the Documents.</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="documents-POSTapi-document">
-                                <a href="#documents-POSTapi-document">Store a newly created resource in storage.</a>
+                                <a href="#documents-POSTapi-document">Store a new Document.</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="documents-GETapi-document--id-">
-                                <a href="#documents-GETapi-document--id-">Display the specified resource.</a>
+                                <a href="#documents-GETapi-document--id-">Display the specified document.</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="documents-PUTapi-document--id-">
-                                <a href="#documents-PUTapi-document--id-">Update the specified resource in storage.</a>
+                                <a href="#documents-PUTapi-document--id-">Update the specified document.</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="documents-DELETEapi-document--id-">
-                                <a href="#documents-DELETEapi-document--id-">Remove the specified resource from storage.</a>
+                                <a href="#documents-DELETEapi-document--id-">Remove the specified document.</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="documents-GETapi-document--id--download">
                                 <a href="#documents-GETapi-document--id--download">Download one document</a>
-                            </li>
-                                                                        </ul>
-                            </ul>
-                    <ul id="tocify-header-endpoints" class="tocify-header">
-                <li class="tocify-item level-1" data-unique="endpoints">
-                    <a href="#endpoints">Endpoints</a>
-                </li>
-                                    <ul id="tocify-subheader-endpoints" class="tocify-subheader">
-                                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-user">
-                                <a href="#endpoints-GETapi-user">GET api/user</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-doctype">
-                                <a href="#endpoints-GETapi-doctype">Display a listing of the resource.</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-doctype">
-                                <a href="#endpoints-POSTapi-doctype">Store a newly created resource in storage.</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-doctype--id-">
-                                <a href="#endpoints-GETapi-doctype--id-">Display the specified resource.</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-PUTapi-doctype--id-">
-                                <a href="#endpoints-PUTapi-doctype--id-">Update the specified resource in storage.</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-DELETEapi-doctype--id-">
-                                <a href="#endpoints-DELETEapi-doctype--id-">Remove the specified resource from storage.</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-column">
-                                <a href="#endpoints-GETapi-column">Display a listing of the resource.</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-column">
-                                <a href="#endpoints-POSTapi-column">Store a newly created resource in storage.</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-column--id-">
-                                <a href="#endpoints-GETapi-column--id-">Display the specified resource.</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-PUTapi-column--id-">
-                                <a href="#endpoints-PUTapi-column--id-">Update the specified resource in storage.</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-DELETEapi-column--id-">
-                                <a href="#endpoints-DELETEapi-column--id-">Remove the specified resource from storage.</a>
                             </li>
                                                                         </ul>
                             </ul>
@@ -152,42 +150,42 @@
     <div class="dark-box"></div>
     <div class="content">
         <h1 id="introduction">Introduction</h1>
-<p>An simple API</p>
+<p>My simple API</p>
 <aside>
-    <strong>Base URL</strong>: <code>http://localhost:8000</code>
+    <strong>Base URL</strong>: <code>http://localhost</code>
 </aside>
-<p>This documentation aims to provide all the information you need to work with our API.</p>
+<p>This documentation aims to provide all the information you need to work with my API.</p>
 <aside>As you scroll, you'll see code examples for working with the API in different programming languages in the dark area to the right (or as part of the content on mobile).
 You can switch the language used with the tabs at the top right (or from the nav menu at the top left on mobile).</aside>
 
         <h1 id="authenticating-requests">Authenticating requests</h1>
 <p>This API is not authenticated.</p>
 
-        <h1 id="documents">Documents</h1>
+        <h1 id="columns">Columns</h1>
 
-    <p>APIs for managing Documents</p>
+    <p>APIs for managing the Columns, necessary for creating a document</p>
 
-                                <h2 id="documents-GETapi-document">Index</h2>
+                                <h2 id="columns-GETapi-column">Display a listing of the Columns.</h2>
 
 <p>
 </p>
 
-<p>This endpoint is used to see all documents in the system.</p>
 
-<span id="example-requests-GETapi-document">
+
+<span id="example-requests-GETapi-column">
 <blockquote>Example request:</blockquote>
 
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/document" \
+    --get "http://localhost/api/column" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/document"
+    "http://localhost/api/column"
 );
 
 const headers = {
@@ -204,7 +202,7 @@ fetch(url, {
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'http://localhost:8000/api/document',
+    'http://localhost/api/column',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'application/json',
@@ -220,7 +218,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'http://localhost:8000/api/document'
+url = 'http://localhost/api/column'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -231,62 +229,62 @@ response.json()</code></pre></div>
 
 </span>
 
-<span id="example-responses-GETapi-document">
+<span id="example-responses-GETapi-column">
             <blockquote>
-            <p>Example response (200, JsonResponse):</p>
+            <p>Example response (200):</p>
         </blockquote>
-                <pre>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 58
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
 
-<code class="language-json" style="max-height: 300px;">{
-&quot;data&quot;: [&#039;all the documents in the system&#039;],
-}</code>
+<code class="language-json" style="max-height: 300px;">[
+    {
+        &quot;id&quot;: 1,
+        &quot;created_at&quot;: &quot;2023-08-16T22:21:59.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2023-08-16T22:28:14.000000Z&quot;,
+        &quot;deleted_at&quot;: null,
+        &quot;name&quot;: &quot;First name&quot;,
+        &quot;document_types_id&quot;: 1,
+        &quot;document_type&quot;: null
+    }
+]</code>
  </pre>
     </span>
-<span id="execution-results-GETapi-document" hidden>
+<span id="execution-results-GETapi-column" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-GETapi-document"></span>:
+                id="execution-response-status-GETapi-column"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-document"
+    <pre class="json"><code id="execution-response-content-GETapi-column"
       data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
 </span>
-<span id="execution-error-GETapi-document" hidden>
+<span id="execution-error-GETapi-column" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-document">
+    <pre><code id="execution-error-message-GETapi-column">
 
 Tip: Check that you&#039;re properly connected to the network.
 If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
 You can check the Dev Tools console for debugging information.</code></pre>
 </span>
-<form id="form-GETapi-document" data-method="GET"
-      data-path="api/document"
+<form id="form-GETapi-column" data-method="GET"
+      data-path="api/column"
       data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-document', this);">
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-column', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-document"
-                    onclick="tryItOut('GETapi-document');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-document"
-                    onclick="cancelTryOut('GETapi-document');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-document"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
             </h3>
             <p>
             <small class="badge badge-green">GET</small>
-            <b><code>api/document</code></b>
+            <b><code>api/column</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
@@ -294,7 +292,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-document"
+                              name="Content-Type"                data-endpoint="GETapi-column"
                value="application/json"
                data-component="header">
     <br>
@@ -305,7 +303,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="GETapi-document"
+                              name="Accept"                data-endpoint="GETapi-column"
                value="application/json"
                data-component="header">
     <br>
@@ -313,35 +311,32 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         </form>
 
-                    <h2 id="documents-POSTapi-document">Store a newly created resource in storage.</h2>
+                    <h2 id="columns-POSTapi-column">Store a new Column.</h2>
 
 <p>
 </p>
 
 
 
-<span id="example-requests-POSTapi-document">
+<span id="example-requests-POSTapi-column">
 <blockquote>Example request:</blockquote>
 
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost:8000/api/document" \
+    "http://localhost/api/column" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"yqirycaopendj\",
-    \"document_types_id\": \"fuga\",
-    \"column\": [
-        \"quasi\"
-    ]
+    \"name\": \"First name\",
+    \"document_types_id\": 3
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/document"
+    "http://localhost/api/column"
 );
 
 const headers = {
@@ -350,11 +345,8 @@ const headers = {
 };
 
 let body = {
-    "name": "yqirycaopendj",
-    "document_types_id": "fuga",
-    "column": [
-        "quasi"
-    ]
+    "name": "First name",
+    "document_types_id": 3
 };
 
 fetch(url, {
@@ -367,18 +359,15 @@ fetch(url, {
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;post(
-    'http://localhost:8000/api/document',
+    'http://localhost/api/column',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'application/json',
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'name' =&gt; 'yqirycaopendj',
-            'document_types_id' =&gt; 'fuga',
-            'column' =&gt; [
-                'quasi',
-            ],
+            'name' =&gt; 'First name',
+            'document_types_id' =&gt; 3,
         ],
     ]
 );
@@ -390,13 +379,10 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'http://localhost:8000/api/document'
+url = 'http://localhost/api/column'
 payload = {
-    "name": "yqirycaopendj",
-    "document_types_id": "fuga",
-    "column": [
-        "quasi"
-    ]
+    "name": "First name",
+    "document_types_id": 3
 }
 headers = {
   'Content-Type': 'application/json',
@@ -408,53 +394,51 @@ response.json()</code></pre></div>
 
 </span>
 
-<span id="example-responses-POSTapi-document">
-</span>
-<span id="execution-results-POSTapi-document" hidden>
+<span id="example-responses-POSTapi-column">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+&quot;message&quot;: &quot;Column created successfully!!&quot;,
+&quot;data&quot;: {
+&quot;name&quot;: &quot;First name&quot;,
+&quot;document_types_id&quot;: &quot;1&quot;,
+&quot;updated_at&quot;: &quot;2023-08-16T22:21:59.000000Z&quot;,
+&quot;created_at&quot;: &quot;2023-08-16T22:21:59.000000Z&quot;,
+&quot;id&quot;: 1
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-column" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-POSTapi-document"></span>:
+                id="execution-response-status-POSTapi-column"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-document"
+    <pre class="json"><code id="execution-response-content-POSTapi-column"
       data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
 </span>
-<span id="execution-error-POSTapi-document" hidden>
+<span id="execution-error-POSTapi-column" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-document">
+    <pre><code id="execution-error-message-POSTapi-column">
 
 Tip: Check that you&#039;re properly connected to the network.
 If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
 You can check the Dev Tools console for debugging information.</code></pre>
 </span>
-<form id="form-POSTapi-document" data-method="POST"
-      data-path="api/document"
+<form id="form-POSTapi-column" data-method="POST"
+      data-path="api/column"
       data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('POSTapi-document', this);">
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-column', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-POSTapi-document"
-                    onclick="tryItOut('POSTapi-document');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-POSTapi-document"
-                    onclick="cancelTryOut('POSTapi-document');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-POSTapi-document"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
             </h3>
             <p>
             <small class="badge badge-black">POST</small>
-            <b><code>api/document</code></b>
+            <b><code>api/column</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
@@ -462,7 +446,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="POSTapi-document"
+                              name="Content-Type"                data-endpoint="POSTapi-column"
                value="application/json"
                data-component="header">
     <br>
@@ -473,7 +457,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="POSTapi-document"
+                              name="Accept"                data-endpoint="POSTapi-column"
                value="application/json"
                data-component="header">
     <br>
@@ -485,79 +469,46 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <small>string</small>&nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="name"                data-endpoint="POSTapi-document"
-               value="yqirycaopendj"
+                              name="name"                data-endpoint="POSTapi-column"
+               value="First name"
                data-component="body">
     <br>
-<p>Must be at least 3 characters. Example: <code>yqirycaopendj</code></p>
+<p>An unique name of the document type. Example: <code>First name</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>document_types_id</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
+<small>integer</small>&nbsp;
  &nbsp;
-                <input type="text" style="display: none"
-                              name="document_types_id"                data-endpoint="POSTapi-document"
-               value="fuga"
+                <input type="number" style="display: none"
+               step="any"               name="document_types_id"                data-endpoint="POSTapi-column"
+               value="3"
                data-component="body">
     <br>
-<p>Example: <code>fuga</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-        <details>
-            <summary style="padding-bottom: 10px;">
-                <b style="line-height: 2;"><code>column</code></b>&nbsp;&nbsp;
-<small>string[]</small>&nbsp;
- &nbsp;
-<br>
-
-            </summary>
-                                                <div style="margin-left: 14px; clear: unset;">
-                        <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="column.0.id"                data-endpoint="POSTapi-document"
-               value="incidunt"
-               data-component="body">
-    <br>
-<p>Example: <code>incidunt</code></p>
-                    </div>
-                                                                <div style="margin-left: 14px; clear: unset;">
-                        <b style="line-height: 2;"><code>content</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="column.0.content"                data-endpoint="POSTapi-document"
-               value="mrwpsjmawekxysnhqr"
-               data-component="body">
-    <br>
-<p>Must be at least 3 characters. Example: <code>mrwpsjmawekxysnhqr</code></p>
-                    </div>
-                                    </details>
+<p>An valid document type id. Example: <code>3</code></p>
         </div>
         </form>
 
-                    <h2 id="documents-GETapi-document--id-">Display the specified resource.</h2>
+                    <h2 id="columns-GETapi-column--id-">Display the specified column.</h2>
 
 <p>
 </p>
 
 
 
-<span id="example-requests-GETapi-document--id-">
+<span id="example-requests-GETapi-column--id-">
 <blockquote>Example request:</blockquote>
 
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/document/recusandae" \
+    --get "http://localhost/api/column/13" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/document/recusandae"
+    "http://localhost/api/column/13"
 );
 
 const headers = {
@@ -574,7 +525,7 @@ fetch(url, {
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'http://localhost:8000/api/document/recusandae',
+    'http://localhost/api/column/13',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'application/json',
@@ -590,7 +541,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'http://localhost:8000/api/document/recusandae'
+url = 'http://localhost/api/column/13'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -601,71 +552,50 @@ response.json()</code></pre></div>
 
 </span>
 
-<span id="example-responses-GETapi-document--id-">
+<span id="example-responses-GETapi-column--id-">
             <blockquote>
-            <p>Example response (400):</p>
+            <p>Example response (200):</p>
         </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 55
-access-control-allow-origin: *
- </code></pre></details>         <pre>
+                <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;error&quot;: &quot;Document not found&quot;
+    &quot;id&quot;: 1,
+    &quot;created_at&quot;: &quot;2023-08-16T22:21:59.000000Z&quot;,
+    &quot;updated_at&quot;: &quot;2023-08-16T22:21:59.000000Z&quot;,
+    &quot;deleted_at&quot;: null,
+    &quot;name&quot;: &quot;First name&quot;,
+    &quot;document_types_id&quot;: 1
 }</code>
  </pre>
     </span>
-<span id="execution-results-GETapi-document--id-" hidden>
+<span id="execution-results-GETapi-column--id-" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-GETapi-document--id-"></span>:
+                id="execution-response-status-GETapi-column--id-"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-document--id-"
+    <pre class="json"><code id="execution-response-content-GETapi-column--id-"
       data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
 </span>
-<span id="execution-error-GETapi-document--id-" hidden>
+<span id="execution-error-GETapi-column--id-" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-document--id-">
+    <pre><code id="execution-error-message-GETapi-column--id-">
 
 Tip: Check that you&#039;re properly connected to the network.
 If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
 You can check the Dev Tools console for debugging information.</code></pre>
 </span>
-<form id="form-GETapi-document--id-" data-method="GET"
-      data-path="api/document/{id}"
+<form id="form-GETapi-column--id-" data-method="GET"
+      data-path="api/column/{id}"
       data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-document--id-', this);">
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-column--id-', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-document--id-"
-                    onclick="tryItOut('GETapi-document--id-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-document--id-"
-                    onclick="cancelTryOut('GETapi-document--id-');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-document--id-"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
             </h3>
             <p>
             <small class="badge badge-green">GET</small>
-            <b><code>api/document/{id}</code></b>
+            <b><code>api/column/{id}</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
@@ -673,7 +603,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-document--id-"
+                              name="Content-Type"                data-endpoint="GETapi-column--id-"
                value="application/json"
                data-component="header">
     <br>
@@ -684,7 +614,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="GETapi-document--id-"
+                              name="Accept"                data-endpoint="GETapi-column--id-"
                value="application/json"
                data-component="header">
     <br>
@@ -693,44 +623,43 @@ You can check the Dev Tools console for debugging information.</code></pre>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
+<small>integer</small>&nbsp;
  &nbsp;
-                <input type="text" style="display: none"
-                              name="id"                data-endpoint="GETapi-document--id-"
-               value="recusandae"
+                <input type="number" style="display: none"
+               step="any"               name="id"                data-endpoint="GETapi-column--id-"
+               value="13"
                data-component="url">
     <br>
-<p>The ID of the document. Example: <code>recusandae</code></p>
+<p>The column id Example: <code>13</code></p>
             </div>
                     </form>
 
-                    <h2 id="documents-PUTapi-document--id-">Update the specified resource in storage.</h2>
+                    <h2 id="columns-PUTapi-column--id-">Update the specified column.</h2>
 
 <p>
 </p>
 
 
 
-<span id="example-requests-PUTapi-document--id-">
+<span id="example-requests-PUTapi-column--id-">
 <blockquote>Example request:</blockquote>
 
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost:8000/api/document/19" \
+    "http://localhost/api/column/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"column\": [
-        \"ad\"
-    ]
+    \"name\": \"Full name\",
+    \"active\": false
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/document/19"
+    "http://localhost/api/column/1"
 );
 
 const headers = {
@@ -739,9 +668,8 @@ const headers = {
 };
 
 let body = {
-    "column": [
-        "ad"
-    ]
+    "name": "Full name",
+    "active": false
 };
 
 fetch(url, {
@@ -754,16 +682,15 @@ fetch(url, {
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;put(
-    'http://localhost:8000/api/document/19',
+    'http://localhost/api/column/1',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'application/json',
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'column' =&gt; [
-                'ad',
-            ],
+            'name' =&gt; 'Full name',
+            'active' =&gt; false,
         ],
     ]
 );
@@ -775,11 +702,10 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'http://localhost:8000/api/document/19'
+url = 'http://localhost/api/column/1'
 payload = {
-    "column": [
-        "ad"
-    ]
+    "name": "Full name",
+    "active": false
 }
 headers = {
   'Content-Type': 'application/json',
@@ -791,57 +717,54 @@ response.json()</code></pre></div>
 
 </span>
 
-<span id="example-responses-PUTapi-document--id-">
-</span>
-<span id="execution-results-PUTapi-document--id-" hidden>
+<span id="example-responses-PUTapi-column--id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;id&quot;: 1,
+    &quot;created_at&quot;: &quot;2023-08-16T22:21:59.000000Z&quot;,
+    &quot;updated_at&quot;: &quot;2023-08-16T22:25:36.000000Z&quot;,
+    &quot;deleted_at&quot;: null,
+    &quot;name&quot;: &quot;Full name&quot;,
+    &quot;document_types_id&quot;: 1
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-PUTapi-column--id-" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-PUTapi-document--id-"></span>:
+                id="execution-response-status-PUTapi-column--id-"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-PUTapi-document--id-"
+    <pre class="json"><code id="execution-response-content-PUTapi-column--id-"
       data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
 </span>
-<span id="execution-error-PUTapi-document--id-" hidden>
+<span id="execution-error-PUTapi-column--id-" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-PUTapi-document--id-">
+    <pre><code id="execution-error-message-PUTapi-column--id-">
 
 Tip: Check that you&#039;re properly connected to the network.
 If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
 You can check the Dev Tools console for debugging information.</code></pre>
 </span>
-<form id="form-PUTapi-document--id-" data-method="PUT"
-      data-path="api/document/{id}"
+<form id="form-PUTapi-column--id-" data-method="PUT"
+      data-path="api/column/{id}"
       data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('PUTapi-document--id-', this);">
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-column--id-', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-PUTapi-document--id-"
-                    onclick="tryItOut('PUTapi-document--id-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-PUTapi-document--id-"
-                    onclick="cancelTryOut('PUTapi-document--id-');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-PUTapi-document--id-"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
             </h3>
             <p>
             <small class="badge badge-darkblue">PUT</small>
-            <b><code>api/document/{id}</code></b>
+            <b><code>api/column/{id}</code></b>
         </p>
             <p>
             <small class="badge badge-purple">PATCH</small>
-            <b><code>api/document/{id}</code></b>
+            <b><code>api/column/{id}</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
@@ -849,7 +772,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="PUTapi-document--id-"
+                              name="Content-Type"                data-endpoint="PUTapi-column--id-"
                value="application/json"
                data-component="header">
     <br>
@@ -860,7 +783,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="PUTapi-document--id-"
+                              name="Accept"                data-endpoint="PUTapi-column--id-"
                value="application/json"
                data-component="header">
     <br>
@@ -872,11 +795,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <small>integer</small>&nbsp;
  &nbsp;
                 <input type="number" style="display: none"
-               step="any"               name="id"                data-endpoint="PUTapi-document--id-"
-               value="19"
+               step="any"               name="id"                data-endpoint="PUTapi-column--id-"
+               value="1"
                data-component="url">
     <br>
-<p>The ID of the document. Example: <code>19</code></p>
+<p>The ID of the column. Example: <code>1</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -884,79 +807,67 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <small>string</small>&nbsp;
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
-                              name="name"                data-endpoint="PUTapi-document--id-"
+                              name="name"                data-endpoint="PUTapi-column--id-"
+               value="Full name"
+               data-component="body">
+    <br>
+<p>An Unique name of the column. Example: <code>Full name</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>document_types_id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="document_types_id"                data-endpoint="PUTapi-column--id-"
                value=""
                data-component="body">
     <br>
 
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
-        <details>
-            <summary style="padding-bottom: 10px;">
-                <b style="line-height: 2;"><code>column</code></b>&nbsp;&nbsp;
-<small>string[]</small>&nbsp;
+            <b style="line-height: 2;"><code>active</code></b>&nbsp;&nbsp;
+<small>boolean</small>&nbsp;
 <i>optional</i> &nbsp;
-<br>
-
-            </summary>
-                                                <div style="margin-left: 14px; clear: unset;">
-                        <b style="line-height: 2;"><code>rel_id</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
-<i>optional</i> &nbsp;
-                <input type="text" style="display: none"
-                              name="column.0.rel_id"                data-endpoint="PUTapi-document--id-"
-               value=""
-               data-component="body">
+                <label data-endpoint="PUTapi-column--id-" style="display: none">
+            <input type="radio" name="active"
+                   value="true"
+                   data-endpoint="PUTapi-column--id-"
+                   data-component="body"             >
+            <code>true</code>
+        </label>
+        <label data-endpoint="PUTapi-column--id-" style="display: none">
+            <input type="radio" name="active"
+                   value="false"
+                   data-endpoint="PUTapi-column--id-"
+                   data-component="body"             >
+            <code>false</code>
+        </label>
     <br>
-<p>This field is required when <code>column.*.id</code> is <code>=</code> or <code>null</code>.</p>
-                    </div>
-                                                                <div style="margin-left: 14px; clear: unset;">
-                        <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
-<i>optional</i> &nbsp;
-                <input type="text" style="display: none"
-                              name="column.0.id"                data-endpoint="PUTapi-document--id-"
-               value=""
-               data-component="body">
-    <br>
-<p>This field is required when <code>column.*.content</code> is <code>!=</code> or <code>null</code>.</p>
-                    </div>
-                                                                <div style="margin-left: 14px; clear: unset;">
-                        <b style="line-height: 2;"><code>content</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
-<i>optional</i> &nbsp;
-                <input type="text" style="display: none"
-                              name="column.0.content"                data-endpoint="PUTapi-document--id-"
-               value="jgjgzdqbaoflhbqecbvcjphhprrhnvlxffoufhyipv"
-               data-component="body">
-    <br>
-<p>Must be at least 3 characters. Example: <code>jgjgzdqbaoflhbqecbvcjphhprrhnvlxffoufhyipv</code></p>
-                    </div>
-                                    </details>
+<p>Toggle column. Example: <code>false</code></p>
         </div>
         </form>
 
-                    <h2 id="documents-DELETEapi-document--id-">Remove the specified resource from storage.</h2>
+                    <h2 id="columns-DELETEapi-column--id-">Remove the specified column from storage.</h2>
 
 <p>
 </p>
 
+<aside>Column is softdeleted. ❗️</aside>
 
-
-<span id="example-requests-DELETEapi-document--id-">
+<span id="example-requests-DELETEapi-column--id-">
 <blockquote>Example request:</blockquote>
 
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost:8000/api/document/18" \
+    "http://localhost/api/column/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/document/18"
+    "http://localhost/api/column/1"
 );
 
 const headers = {
@@ -973,7 +884,7 @@ fetch(url, {
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;delete(
-    'http://localhost:8000/api/document/18',
+    'http://localhost/api/column/1',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'application/json',
@@ -989,7 +900,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'http://localhost:8000/api/document/18'
+url = 'http://localhost/api/column/1'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -1000,53 +911,45 @@ response.json()</code></pre></div>
 
 </span>
 
-<span id="example-responses-DELETEapi-document--id-">
-</span>
-<span id="execution-results-DELETEapi-document--id-" hidden>
+<span id="example-responses-DELETEapi-column--id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Column deleted successfully!!&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-DELETEapi-column--id-" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-DELETEapi-document--id-"></span>:
+                id="execution-response-status-DELETEapi-column--id-"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-DELETEapi-document--id-"
+    <pre class="json"><code id="execution-response-content-DELETEapi-column--id-"
       data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
 </span>
-<span id="execution-error-DELETEapi-document--id-" hidden>
+<span id="execution-error-DELETEapi-column--id-" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-DELETEapi-document--id-">
+    <pre><code id="execution-error-message-DELETEapi-column--id-">
 
 Tip: Check that you&#039;re properly connected to the network.
 If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
 You can check the Dev Tools console for debugging information.</code></pre>
 </span>
-<form id="form-DELETEapi-document--id-" data-method="DELETE"
-      data-path="api/document/{id}"
+<form id="form-DELETEapi-column--id-" data-method="DELETE"
+      data-path="api/column/{id}"
       data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-document--id-', this);">
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-column--id-', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-DELETEapi-document--id-"
-                    onclick="tryItOut('DELETEapi-document--id-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-DELETEapi-document--id-"
-                    onclick="cancelTryOut('DELETEapi-document--id-');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-DELETEapi-document--id-"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
             </h3>
             <p>
             <small class="badge badge-red">DELETE</small>
-            <b><code>api/document/{id}</code></b>
+            <b><code>api/column/{id}</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
@@ -1054,7 +957,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="DELETEapi-document--id-"
+                              name="Content-Type"                data-endpoint="DELETEapi-column--id-"
                value="application/json"
                data-component="header">
     <br>
@@ -1065,7 +968,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="DELETEapi-document--id-"
+                              name="Accept"                data-endpoint="DELETEapi-column--id-"
                value="application/json"
                data-component="header">
     <br>
@@ -1077,366 +980,19 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <small>integer</small>&nbsp;
  &nbsp;
                 <input type="number" style="display: none"
-               step="any"               name="id"                data-endpoint="DELETEapi-document--id-"
-               value="18"
+               step="any"               name="id"                data-endpoint="DELETEapi-column--id-"
+               value="1"
                data-component="url">
     <br>
-<p>The ID of the document. Example: <code>18</code></p>
+<p>The ID of the column. Example: <code>1</code></p>
             </div>
                     </form>
 
-                    <h2 id="documents-GETapi-document--id--download">Download one document</h2>
+                <h1 id="document-types">Document Types</h1>
 
-<p>
-</p>
+    <p>APIs for managing the Documents Types, the base of the API</p>
 
-<p>This endpont will download an document with all it's values as a pdf</p>
-
-<span id="example-requests-GETapi-document--id--download">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/document/17/download" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json" \
-    --data "{
-    \"id\": \"est\"
-}"
-</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/document/17/download"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "id": "est"
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre></div>
-
-
-<div class="php-example">
-    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$response = $client-&gt;get(
-    'http://localhost:8000/api/document/17/download',
-    [
-        'headers' =&gt; [
-            'Content-Type' =&gt; 'application/json',
-            'Accept' =&gt; 'application/json',
-        ],
-        'json' =&gt; [
-            'id' =&gt; 'est',
-        ],
-    ]
-);
-$body = $response-&gt;getBody();
-print_r(json_decode((string) $body));</code></pre></div>
-
-
-<div class="python-example">
-    <pre><code class="language-python">import requests
-import json
-
-url = 'http://localhost:8000/api/document/17/download'
-payload = {
-    "id": "est"
-}
-headers = {
-  'Content-Type': 'application/json',
-  'Accept': 'application/json'
-}
-
-response = requests.request('GET', url, headers=headers, json=payload)
-response.json()</code></pre></div>
-
-</span>
-
-<span id="example-responses-GETapi-document--id--download">
-            <blockquote>
-            <p>Example response (400):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 54
-access-control-allow-origin: *
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;error&quot;: &quot;Document not found&quot;
-}</code>
- </pre>
-    </span>
-<span id="execution-results-GETapi-document--id--download" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETapi-document--id--download"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-document--id--download"
-      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-GETapi-document--id--download" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-document--id--download">
-
-Tip: Check that you&#039;re properly connected to the network.
-If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
-You can check the Dev Tools console for debugging information.</code></pre>
-</span>
-<form id="form-GETapi-document--id--download" data-method="GET"
-      data-path="api/document/{id}/download"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-document--id--download', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-document--id--download"
-                    onclick="tryItOut('GETapi-document--id--download');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-document--id--download"
-                    onclick="cancelTryOut('GETapi-document--id--download');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-document--id--download"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>api/document/{id}/download</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-document--id--download"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="GETapi-document--id--download"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
- &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="id"                data-endpoint="GETapi-document--id--download"
-               value="17"
-               data-component="url">
-    <br>
-<p>The ID of the document. Example: <code>17</code></p>
-            </div>
-                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
-        <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
-<small>The</small>&nbsp;
-<i>optional</i> &nbsp;
-                <input type="text" style="display: none"
-                              name="id"                data-endpoint="GETapi-document--id--download"
-               value="est"
-               data-component="body">
-    <br>
-<p>Document id Example: <code>est</code></p>
-        </div>
-        </form>
-
-                <h1 id="endpoints">Endpoints</h1>
-
-    
-
-                                <h2 id="endpoints-GETapi-user">GET api/user</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-GETapi-user">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/user" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/user"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-
-<div class="php-example">
-    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$response = $client-&gt;get(
-    'http://localhost:8000/api/user',
-    [
-        'headers' =&gt; [
-            'Content-Type' =&gt; 'application/json',
-            'Accept' =&gt; 'application/json',
-        ],
-    ]
-);
-$body = $response-&gt;getBody();
-print_r(json_decode((string) $body));</code></pre></div>
-
-
-<div class="python-example">
-    <pre><code class="language-python">import requests
-import json
-
-url = 'http://localhost:8000/api/user'
-headers = {
-  'Content-Type': 'application/json',
-  'Accept': 'application/json'
-}
-
-response = requests.request('GET', url, headers=headers)
-response.json()</code></pre></div>
-
-</span>
-
-<span id="example-responses-GETapi-user">
-            <blockquote>
-            <p>Example response (401):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-access-control-allow-origin: *
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Unauthenticated.&quot;
-}</code>
- </pre>
-    </span>
-<span id="execution-results-GETapi-user" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETapi-user"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-user"
-      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-GETapi-user" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-user">
-
-Tip: Check that you&#039;re properly connected to the network.
-If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
-You can check the Dev Tools console for debugging information.</code></pre>
-</span>
-<form id="form-GETapi-user" data-method="GET"
-      data-path="api/user"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-user', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-user"
-                    onclick="tryItOut('GETapi-user');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-user"
-                    onclick="cancelTryOut('GETapi-user');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-user"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>api/user</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-user"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="GETapi-user"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                        </form>
-
-                    <h2 id="endpoints-GETapi-doctype">Display a listing of the resource.</h2>
+                                <h2 id="document-types-GETapi-doctype">Display a listing of the resource.</h2>
 
 <p>
 </p>
@@ -1449,14 +1005,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/doctype" \
+    --get "http://localhost/api/doctype" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/doctype"
+    "http://localhost/api/doctype"
 );
 
 const headers = {
@@ -1473,7 +1029,7 @@ fetch(url, {
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'http://localhost:8000/api/doctype',
+    'http://localhost/api/doctype',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'application/json',
@@ -1489,7 +1045,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'http://localhost:8000/api/doctype'
+url = 'http://localhost/api/doctype'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -1542,23 +1098,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
       onsubmit="event.preventDefault(); executeTryOut('GETapi-doctype', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-doctype"
-                    onclick="tryItOut('GETapi-doctype');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-doctype"
-                    onclick="cancelTryOut('GETapi-doctype');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-doctype"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
             </h3>
             <p>
             <small class="badge badge-green">GET</small>
@@ -1589,7 +1128,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         </form>
 
-                    <h2 id="endpoints-POSTapi-doctype">Store a newly created resource in storage.</h2>
+                    <h2 id="document-types-POSTapi-doctype">Store a new document type.</h2>
 
 <p>
 </p>
@@ -1602,11 +1141,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost:8000/api/doctype" \
+    "http://localhost/api/doctype" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"kfzqgicjlzpmnr\",
+    \"name\": \"Personal Info\",
     \"active\": false
 }"
 </code></pre></div>
@@ -1614,7 +1153,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/doctype"
+    "http://localhost/api/doctype"
 );
 
 const headers = {
@@ -1623,7 +1162,7 @@ const headers = {
 };
 
 let body = {
-    "name": "kfzqgicjlzpmnr",
+    "name": "Personal Info",
     "active": false
 };
 
@@ -1637,14 +1176,14 @@ fetch(url, {
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;post(
-    'http://localhost:8000/api/doctype',
+    'http://localhost/api/doctype',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'application/json',
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'name' =&gt; 'kfzqgicjlzpmnr',
+            'name' =&gt; 'Personal Info',
             'active' =&gt; false,
         ],
     ]
@@ -1657,9 +1196,9 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'http://localhost:8000/api/doctype'
+url = 'http://localhost/api/doctype'
 payload = {
-    "name": "kfzqgicjlzpmnr",
+    "name": "Personal Info",
     "active": false
 }
 headers = {
@@ -1673,7 +1212,21 @@ response.json()</code></pre></div>
 </span>
 
 <span id="example-responses-POSTapi-doctype">
-</span>
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+ &quot;message&quot;: &quot;Document type created successfully!!&quot;,
+ &quot;data&quot;: {
+ &quot;name&quot;: &quot;Personal Info&quot;,
+ &quot;updated_at&quot;: &quot;2023-08-16T22:03:20.000000Z&quot;,
+ &quot;created_at&quot;: &quot;2023-08-16T22:03:20.000000Z&quot;,
+ &quot;id&quot;: 1
+}</code>
+ </pre>
+    </span>
 <span id="execution-results-POSTapi-doctype" hidden>
     <blockquote>Received response<span
                 id="execution-response-status-POSTapi-doctype"></span>:
@@ -1698,23 +1251,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
       onsubmit="event.preventDefault(); executeTryOut('POSTapi-doctype', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-POSTapi-doctype"
-                    onclick="tryItOut('POSTapi-doctype');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-POSTapi-doctype"
-                    onclick="cancelTryOut('POSTapi-doctype');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-POSTapi-doctype"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
             </h3>
             <p>
             <small class="badge badge-black">POST</small>
@@ -1750,10 +1286,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-doctype"
-               value="kfzqgicjlzpmnr"
+               value="Personal Info"
                data-component="body">
     <br>
-<p>Must be at least 3 characters. Example: <code>kfzqgicjlzpmnr</code></p>
+<p>An unique name of the document type. Example: <code>Personal Info</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>active</code></b>&nbsp;&nbsp;
@@ -1774,11 +1310,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
             <code>false</code>
         </label>
     <br>
-<p>Example: <code>false</code></p>
+<p>If the document is to be created deactivated. Example: <code>false</code></p>
         </div>
         </form>
 
-                    <h2 id="endpoints-GETapi-doctype--id-">Display the specified resource.</h2>
+                    <h2 id="document-types-GETapi-doctype--id-">Display the specified document type.</h2>
 
 <p>
 </p>
@@ -1791,14 +1327,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/doctype/ut" \
+    --get "http://localhost/api/doctype/12" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/doctype/ut"
+    "http://localhost/api/doctype/12"
 );
 
 const headers = {
@@ -1815,7 +1351,7 @@ fetch(url, {
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'http://localhost:8000/api/doctype/ut',
+    'http://localhost/api/doctype/12',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'application/json',
@@ -1831,7 +1367,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'http://localhost:8000/api/doctype/ut'
+url = 'http://localhost/api/doctype/12'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -1844,21 +1380,17 @@ response.json()</code></pre></div>
 
 <span id="example-responses-GETapi-doctype--id-">
             <blockquote>
-            <p>Example response (400):</p>
+            <p>Example response (200):</p>
         </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 58
-access-control-allow-origin: *
- </code></pre></details>         <pre>
+                <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;error&quot;: &quot;document type not found&quot;
+    &quot;id&quot;: 1,
+    &quot;created_at&quot;: &quot;2023-08-16T22:03:20.000000Z&quot;,
+    &quot;updated_at&quot;: &quot;2023-08-16T22:03:20.000000Z&quot;,
+    &quot;deleted_at&quot;: null,
+    &quot;name&quot;: &quot;Personal Info&quot;,
+    &quot;active&quot;: 1
 }</code>
  </pre>
     </span>
@@ -1886,23 +1418,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
       onsubmit="event.preventDefault(); executeTryOut('GETapi-doctype--id-', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-doctype--id-"
-                    onclick="tryItOut('GETapi-doctype--id-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-doctype--id-"
-                    onclick="cancelTryOut('GETapi-doctype--id-');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-doctype--id-"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
             </h3>
             <p>
             <small class="badge badge-green">GET</small>
@@ -1934,18 +1449,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
+<small>integer</small>&nbsp;
  &nbsp;
-                <input type="text" style="display: none"
-                              name="id"                data-endpoint="GETapi-doctype--id-"
-               value="ut"
+                <input type="number" style="display: none"
+               step="any"               name="id"                data-endpoint="GETapi-doctype--id-"
+               value="12"
                data-component="url">
     <br>
-<p>The ID of the doctype. Example: <code>ut</code></p>
+<p>The document type id Example: <code>12</code></p>
             </div>
                     </form>
 
-                    <h2 id="endpoints-PUTapi-doctype--id-">Update the specified resource in storage.</h2>
+                    <h2 id="document-types-PUTapi-doctype--id-">Update the specified document type.</h2>
 
 <p>
 </p>
@@ -1958,10 +1473,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost:8000/api/doctype/ut" \
+    "http://localhost/api/doctype/suscipit" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
+    \"name\": \"Personal Info\",
     \"active\": false
 }"
 </code></pre></div>
@@ -1969,7 +1485,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/doctype/ut"
+    "http://localhost/api/doctype/suscipit"
 );
 
 const headers = {
@@ -1978,6 +1494,7 @@ const headers = {
 };
 
 let body = {
+    "name": "Personal Info",
     "active": false
 };
 
@@ -1991,13 +1508,14 @@ fetch(url, {
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;put(
-    'http://localhost:8000/api/doctype/ut',
+    'http://localhost/api/doctype/suscipit',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'application/json',
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
+            'name' =&gt; 'Personal Info',
             'active' =&gt; false,
         ],
     ]
@@ -2010,8 +1528,9 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'http://localhost:8000/api/doctype/ut'
+url = 'http://localhost/api/doctype/suscipit'
 payload = {
+    "name": "Personal Info",
     "active": false
 }
 headers = {
@@ -2025,7 +1544,21 @@ response.json()</code></pre></div>
 </span>
 
 <span id="example-responses-PUTapi-doctype--id-">
-</span>
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;id&quot;: 1,
+    &quot;created_at&quot;: &quot;2023-08-16T22:03:20.000000Z&quot;,
+    &quot;updated_at&quot;: &quot;2023-08-16T22:09:28.000000Z&quot;,
+    &quot;deleted_at&quot;: null,
+    &quot;name&quot;: &quot;Personal Info&quot;,
+    &quot;active&quot;: &quot;0&quot;
+}</code>
+ </pre>
+    </span>
 <span id="execution-results-PUTapi-doctype--id-" hidden>
     <blockquote>Received response<span
                 id="execution-response-status-PUTapi-doctype--id-"></span>:
@@ -2050,23 +1583,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
       onsubmit="event.preventDefault(); executeTryOut('PUTapi-doctype--id-', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-PUTapi-doctype--id-"
-                    onclick="tryItOut('PUTapi-doctype--id-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-PUTapi-doctype--id-"
-                    onclick="cancelTryOut('PUTapi-doctype--id-');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-PUTapi-doctype--id-"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
             </h3>
             <p>
             <small class="badge badge-darkblue">PUT</small>
@@ -2106,10 +1622,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="PUTapi-doctype--id-"
-               value="ut"
+               value="suscipit"
                data-component="url">
     <br>
-<p>The ID of the doctype. Example: <code>ut</code></p>
+<p>The ID of the doctype. Example: <code>suscipit</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -2118,10 +1634,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="PUTapi-doctype--id-"
-               value=""
+               value="Personal Info"
                data-component="body">
     <br>
-
+<p>An Unique name of the document type. Example: <code>Personal Info</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>active</code></b>&nbsp;&nbsp;
@@ -2142,16 +1658,16 @@ You can check the Dev Tools console for debugging information.</code></pre>
             <code>false</code>
         </label>
     <br>
-<p>Example: <code>false</code></p>
+<p>Toggle documentation type. Example: <code>false</code></p>
         </div>
         </form>
 
-                    <h2 id="endpoints-DELETEapi-doctype--id-">Remove the specified resource from storage.</h2>
+                    <h2 id="document-types-DELETEapi-doctype--id-">Remove the specified document type from storage.</h2>
 
 <p>
 </p>
 
-
+<aside>Document Type is softdeleted. ❗️</aside>
 
 <span id="example-requests-DELETEapi-doctype--id-">
 <blockquote>Example request:</blockquote>
@@ -2159,14 +1675,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost:8000/api/doctype/vitae" \
+    "http://localhost/api/doctype/excepturi" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/doctype/vitae"
+    "http://localhost/api/doctype/excepturi"
 );
 
 const headers = {
@@ -2183,7 +1699,7 @@ fetch(url, {
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;delete(
-    'http://localhost:8000/api/doctype/vitae',
+    'http://localhost/api/doctype/excepturi',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'application/json',
@@ -2199,7 +1715,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'http://localhost:8000/api/doctype/vitae'
+url = 'http://localhost/api/doctype/excepturi'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -2211,7 +1727,16 @@ response.json()</code></pre></div>
 </span>
 
 <span id="example-responses-DELETEapi-doctype--id-">
-</span>
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Document type deleted successfully!!&quot;
+}</code>
+ </pre>
+    </span>
 <span id="execution-results-DELETEapi-doctype--id-" hidden>
     <blockquote>Received response<span
                 id="execution-response-status-DELETEapi-doctype--id-"></span>:
@@ -2236,23 +1761,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
       onsubmit="event.preventDefault(); executeTryOut('DELETEapi-doctype--id-', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-DELETEapi-doctype--id-"
-                    onclick="tryItOut('DELETEapi-doctype--id-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-DELETEapi-doctype--id-"
-                    onclick="cancelTryOut('DELETEapi-doctype--id-');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-DELETEapi-doctype--id-"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
             </h3>
             <p>
             <small class="badge badge-red">DELETE</small>
@@ -2288,34 +1796,38 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="DELETEapi-doctype--id-"
-               value="vitae"
+               value="excepturi"
                data-component="url">
     <br>
-<p>The ID of the doctype. Example: <code>vitae</code></p>
+<p>The ID of the doctype. Example: <code>excepturi</code></p>
             </div>
                     </form>
 
-                    <h2 id="endpoints-GETapi-column">Display a listing of the resource.</h2>
+                <h1 id="documents">Documents</h1>
+
+    <p>APIs for managing Documents</p>
+
+                                <h2 id="documents-GETapi-document">Display a listing of the Documents.</h2>
 
 <p>
 </p>
 
 
 
-<span id="example-requests-GETapi-column">
+<span id="example-requests-GETapi-document">
 <blockquote>Example request:</blockquote>
 
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/column" \
+    --get "http://localhost/api/document" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/column"
+    "http://localhost/api/document"
 );
 
 const headers = {
@@ -2332,7 +1844,7 @@ fetch(url, {
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'http://localhost:8000/api/column',
+    'http://localhost/api/document',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'application/json',
@@ -2348,7 +1860,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'http://localhost:8000/api/column'
+url = 'http://localhost/api/document'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -2359,7 +1871,7 @@ response.json()</code></pre></div>
 
 </span>
 
-<span id="example-responses-GETapi-column">
+<span id="example-responses-GETapi-document">
             <blockquote>
             <p>Example response (200):</p>
         </blockquote>
@@ -2374,54 +1886,83 @@ x-ratelimit-remaining: 57
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
-<code class="language-json" style="max-height: 300px;">[]</code>
+<code class="language-json" style="max-height: 300px;">[
+    {
+        &quot;id&quot;: 1,
+        &quot;created_at&quot;: &quot;2023-08-16T22:35:09.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2023-08-16T23:18:06.000000Z&quot;,
+        &quot;name&quot;: &quot;My first document&quot;,
+        &quot;document_types_id&quot;: 1,
+        &quot;document_type&quot;: {
+            &quot;id&quot;: 1,
+            &quot;created_at&quot;: &quot;2023-08-16T22:03:20.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-08-16T22:12:53.000000Z&quot;,
+            &quot;deleted_at&quot;: &quot;2023-08-16T22:12:53.000000Z&quot;,
+            &quot;name&quot;: &quot;Personal Info&quot;,
+            &quot;active&quot;: 0
+        }
+    },
+    {
+        &quot;id&quot;: 2,
+        &quot;created_at&quot;: &quot;2023-08-16T22:36:32.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2023-08-16T22:36:32.000000Z&quot;,
+        &quot;name&quot;: &quot;My second document&quot;,
+        &quot;document_types_id&quot;: 1,
+        &quot;document_type&quot;: {
+            &quot;id&quot;: 1,
+            &quot;created_at&quot;: &quot;2023-08-16T22:03:20.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-08-16T22:12:53.000000Z&quot;,
+            &quot;deleted_at&quot;: &quot;2023-08-16T22:12:53.000000Z&quot;,
+            &quot;name&quot;: &quot;Personal Info&quot;,
+            &quot;active&quot;: 0
+        }
+    },
+    {
+        &quot;id&quot;: 3,
+        &quot;created_at&quot;: &quot;2023-08-16T22:36:49.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2023-08-16T22:36:49.000000Z&quot;,
+        &quot;name&quot;: &quot;My third document&quot;,
+        &quot;document_types_id&quot;: 1,
+        &quot;document_type&quot;: {
+            &quot;id&quot;: 1,
+            &quot;created_at&quot;: &quot;2023-08-16T22:03:20.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-08-16T22:12:53.000000Z&quot;,
+            &quot;deleted_at&quot;: &quot;2023-08-16T22:12:53.000000Z&quot;,
+            &quot;name&quot;: &quot;Personal Info&quot;,
+            &quot;active&quot;: 0
+        }
+    }
+]</code>
  </pre>
     </span>
-<span id="execution-results-GETapi-column" hidden>
+<span id="execution-results-GETapi-document" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-GETapi-column"></span>:
+                id="execution-response-status-GETapi-document"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-column"
+    <pre class="json"><code id="execution-response-content-GETapi-document"
       data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
 </span>
-<span id="execution-error-GETapi-column" hidden>
+<span id="execution-error-GETapi-document" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-column">
+    <pre><code id="execution-error-message-GETapi-document">
 
 Tip: Check that you&#039;re properly connected to the network.
 If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
 You can check the Dev Tools console for debugging information.</code></pre>
 </span>
-<form id="form-GETapi-column" data-method="GET"
-      data-path="api/column"
+<form id="form-GETapi-document" data-method="GET"
+      data-path="api/document"
       data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-column', this);">
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-document', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-column"
-                    onclick="tryItOut('GETapi-column');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-column"
-                    onclick="cancelTryOut('GETapi-column');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-column"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
             </h3>
             <p>
             <small class="badge badge-green">GET</small>
-            <b><code>api/column</code></b>
+            <b><code>api/document</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
@@ -2429,7 +1970,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-column"
+                              name="Content-Type"                data-endpoint="GETapi-document"
                value="application/json"
                data-component="header">
     <br>
@@ -2440,7 +1981,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="GETapi-column"
+                              name="Accept"                data-endpoint="GETapi-document"
                value="application/json"
                data-component="header">
     <br>
@@ -2448,32 +1989,38 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         </form>
 
-                    <h2 id="endpoints-POSTapi-column">Store a newly created resource in storage.</h2>
+                    <h2 id="documents-POSTapi-document">Store a new Document.</h2>
 
 <p>
 </p>
 
 
 
-<span id="example-requests-POSTapi-column">
+<span id="example-requests-POSTapi-document">
 <blockquote>Example request:</blockquote>
 
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost:8000/api/column" \
+    "http://localhost/api/document" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"dyaa\",
-    \"document_types_id\": \"molestias\"
+    \"name\": \"My first Document\",
+    \"document_types_id\": 1,
+    \"column\": [
+        {
+            \"id\": 1,
+            \"content\": \"Nicolas\"
+        }
+    ]
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/column"
+    "http://localhost/api/document"
 );
 
 const headers = {
@@ -2482,8 +2029,14 @@ const headers = {
 };
 
 let body = {
-    "name": "dyaa",
-    "document_types_id": "molestias"
+    "name": "My first Document",
+    "document_types_id": 1,
+    "column": [
+        {
+            "id": 1,
+            "content": "Nicolas"
+        }
+    ]
 };
 
 fetch(url, {
@@ -2496,15 +2049,21 @@ fetch(url, {
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;post(
-    'http://localhost:8000/api/column',
+    'http://localhost/api/document',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'application/json',
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'name' =&gt; 'dyaa',
-            'document_types_id' =&gt; 'molestias',
+            'name' =&gt; 'My first Document',
+            'document_types_id' =&gt; 1,
+            'column' =&gt; [
+                [
+                    'id' =&gt; 1,
+                    'content' =&gt; 'Nicolas',
+                ],
+            ],
         ],
     ]
 );
@@ -2516,10 +2075,16 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'http://localhost:8000/api/column'
+url = 'http://localhost/api/document'
 payload = {
-    "name": "dyaa",
-    "document_types_id": "molestias"
+    "name": "My first Document",
+    "document_types_id": 1,
+    "column": [
+        {
+            "id": 1,
+            "content": "Nicolas"
+        }
+    ]
 }
 headers = {
   'Content-Type': 'application/json',
@@ -2531,53 +2096,52 @@ response.json()</code></pre></div>
 
 </span>
 
-<span id="example-responses-POSTapi-column">
-</span>
-<span id="execution-results-POSTapi-column" hidden>
+<span id="example-responses-POSTapi-document">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Document created successfully!!&quot;,
+    &quot;data&quot;: {
+        &quot;name&quot;: &quot;My fourth document&quot;,
+        &quot;document_types_id&quot;: &quot;1&quot;,
+        &quot;updated_at&quot;: &quot;2023-08-16T22:37:26.000000Z&quot;,
+        &quot;created_at&quot;: &quot;2023-08-16T22:37:26.000000Z&quot;,
+        &quot;id&quot;: 4
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-document" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-POSTapi-column"></span>:
+                id="execution-response-status-POSTapi-document"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-column"
+    <pre class="json"><code id="execution-response-content-POSTapi-document"
       data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
 </span>
-<span id="execution-error-POSTapi-column" hidden>
+<span id="execution-error-POSTapi-document" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-column">
+    <pre><code id="execution-error-message-POSTapi-document">
 
 Tip: Check that you&#039;re properly connected to the network.
 If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
 You can check the Dev Tools console for debugging information.</code></pre>
 </span>
-<form id="form-POSTapi-column" data-method="POST"
-      data-path="api/column"
+<form id="form-POSTapi-document" data-method="POST"
+      data-path="api/document"
       data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('POSTapi-column', this);">
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-document', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-POSTapi-column"
-                    onclick="tryItOut('POSTapi-column');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-POSTapi-column"
-                    onclick="cancelTryOut('POSTapi-column');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-POSTapi-column"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
             </h3>
             <p>
             <small class="badge badge-black">POST</small>
-            <b><code>api/column</code></b>
+            <b><code>api/document</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
@@ -2585,7 +2149,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="POSTapi-column"
+                              name="Content-Type"                data-endpoint="POSTapi-document"
                value="application/json"
                data-component="header">
     <br>
@@ -2596,7 +2160,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="POSTapi-column"
+                              name="Accept"                data-endpoint="POSTapi-document"
                value="application/json"
                data-component="header">
     <br>
@@ -2608,46 +2172,79 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <small>string</small>&nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="name"                data-endpoint="POSTapi-column"
-               value="dyaa"
+                              name="name"                data-endpoint="POSTapi-document"
+               value="My first Document"
                data-component="body">
     <br>
-<p>Must be at least 3 characters. Example: <code>dyaa</code></p>
+<p>An unique name of the document. Example: <code>My first Document</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>document_types_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="document_types_id"                data-endpoint="POSTapi-document"
+               value="1"
+               data-component="body">
+    <br>
+<p>An valid document type id. Example: <code>1</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+        <details>
+            <summary style="padding-bottom: 10px;">
+                <b style="line-height: 2;"><code>column</code></b>&nbsp;&nbsp;
+<small>object[]</small>&nbsp;
+ &nbsp;
+<br>
+<p>List of Column id and content</p>
+            </summary>
+                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="column.0.id"                data-endpoint="POSTapi-document"
+               value="1"
+               data-component="body">
+    <br>
+<p>An valid column_id of the same document type. Example: <code>1</code></p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>content</code></b>&nbsp;&nbsp;
 <small>string</small>&nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="document_types_id"                data-endpoint="POSTapi-column"
-               value="molestias"
+                              name="column.0.content"                data-endpoint="POSTapi-document"
+               value="Nicolas"
                data-component="body">
     <br>
-<p>Example: <code>molestias</code></p>
+<p>The info that will be stored. Example: <code>Nicolas</code></p>
+                    </div>
+                                    </details>
         </div>
         </form>
 
-                    <h2 id="endpoints-GETapi-column--id-">Display the specified resource.</h2>
+                    <h2 id="documents-GETapi-document--id-">Display the specified document.</h2>
 
 <p>
 </p>
 
 
 
-<span id="example-requests-GETapi-column--id-">
+<span id="example-requests-GETapi-document--id-">
 <blockquote>Example request:</blockquote>
 
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/column/17" \
+    --get "http://localhost/api/document/18" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/column/17"
+    "http://localhost/api/document/18"
 );
 
 const headers = {
@@ -2664,7 +2261,7 @@ fetch(url, {
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'http://localhost:8000/api/column/17',
+    'http://localhost/api/document/18',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'application/json',
@@ -2680,7 +2277,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'http://localhost:8000/api/column/17'
+url = 'http://localhost/api/document/18'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -2691,71 +2288,64 @@ response.json()</code></pre></div>
 
 </span>
 
-<span id="example-responses-GETapi-column--id-">
+<span id="example-responses-GETapi-document--id-">
             <blockquote>
-            <p>Example response (400):</p>
+            <p>Example response (200):</p>
         </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 56
-access-control-allow-origin: *
- </code></pre></details>         <pre>
+                <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;error&quot;: &quot;Column not found&quot;
+    &quot;id&quot;: 1,
+    &quot;created_at&quot;: &quot;2023-08-16T22:35:09.000000Z&quot;,
+    &quot;updated_at&quot;: &quot;2023-08-16T22:35:09.000000Z&quot;,
+    &quot;name&quot;: &quot;My first document&quot;,
+    &quot;document_types_id&quot;: 1,
+    &quot;data&quot;: [
+        {
+            &quot;name&quot;: &quot;First name&quot;,
+            &quot;content&quot;: &quot;Jonh&quot;,
+            &quot;rel_id&quot;: 1
+        }
+    ],
+    &quot;document_type&quot;: {
+        &quot;id&quot;: 1,
+        &quot;created_at&quot;: &quot;2023-08-16T22:03:20.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2023-08-16T22:12:53.000000Z&quot;,
+        &quot;deleted_at&quot;: &quot;2023-08-16T22:12:53.000000Z&quot;,
+        &quot;name&quot;: &quot;Personal Info&quot;,
+        &quot;active&quot;: 0
+    }
 }</code>
  </pre>
     </span>
-<span id="execution-results-GETapi-column--id-" hidden>
+<span id="execution-results-GETapi-document--id-" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-GETapi-column--id-"></span>:
+                id="execution-response-status-GETapi-document--id-"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-column--id-"
+    <pre class="json"><code id="execution-response-content-GETapi-document--id-"
       data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
 </span>
-<span id="execution-error-GETapi-column--id-" hidden>
+<span id="execution-error-GETapi-document--id-" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-column--id-">
+    <pre><code id="execution-error-message-GETapi-document--id-">
 
 Tip: Check that you&#039;re properly connected to the network.
 If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
 You can check the Dev Tools console for debugging information.</code></pre>
 </span>
-<form id="form-GETapi-column--id-" data-method="GET"
-      data-path="api/column/{id}"
+<form id="form-GETapi-document--id-" data-method="GET"
+      data-path="api/document/{id}"
       data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-column--id-', this);">
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-document--id-', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-column--id-"
-                    onclick="tryItOut('GETapi-column--id-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-column--id-"
-                    onclick="cancelTryOut('GETapi-column--id-');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-column--id-"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
             </h3>
             <p>
             <small class="badge badge-green">GET</small>
-            <b><code>api/column/{id}</code></b>
+            <b><code>api/document/{id}</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
@@ -2763,7 +2353,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-column--id-"
+                              name="Content-Type"                data-endpoint="GETapi-document--id-"
                value="application/json"
                data-component="header">
     <br>
@@ -2774,7 +2364,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="GETapi-column--id-"
+                              name="Accept"                data-endpoint="GETapi-document--id-"
                value="application/json"
                data-component="header">
     <br>
@@ -2786,39 +2376,47 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <small>integer</small>&nbsp;
  &nbsp;
                 <input type="number" style="display: none"
-               step="any"               name="id"                data-endpoint="GETapi-column--id-"
-               value="17"
+               step="any"               name="id"                data-endpoint="GETapi-document--id-"
+               value="18"
                data-component="url">
     <br>
-<p>The ID of the column. Example: <code>17</code></p>
+<p>The document id</p>
+<aside class="notice">rel_id of each data, is what you use to update the document data. 👍🏻</aside> Example: `18`
             </div>
                     </form>
 
-                    <h2 id="endpoints-PUTapi-column--id-">Update the specified resource in storage.</h2>
+                    <h2 id="documents-PUTapi-document--id-">Update the specified document.</h2>
 
 <p>
 </p>
 
 
 
-<span id="example-requests-PUTapi-column--id-">
+<span id="example-requests-PUTapi-document--id-">
 <blockquote>Example request:</blockquote>
 
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost:8000/api/column/18" \
+    "http://localhost/api/document/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"value\": \"qduwbhk\"
+    \"name\": \"My first Document\",
+    \"column\": [
+        {
+            \"id\": 1,
+            \"rel_id\": 5,
+            \"content\": \"Nicolas\"
+        }
+    ]
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/column/18"
+    "http://localhost/api/document/1"
 );
 
 const headers = {
@@ -2827,7 +2425,14 @@ const headers = {
 };
 
 let body = {
-    "value": "qduwbhk"
+    "name": "My first Document",
+    "column": [
+        {
+            "id": 1,
+            "rel_id": 5,
+            "content": "Nicolas"
+        }
+    ]
 };
 
 fetch(url, {
@@ -2840,14 +2445,21 @@ fetch(url, {
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;put(
-    'http://localhost:8000/api/column/18',
+    'http://localhost/api/document/1',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'application/json',
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'value' =&gt; 'qduwbhk',
+            'name' =&gt; 'My first Document',
+            'column' =&gt; [
+                [
+                    'id' =&gt; 1,
+                    'rel_id' =&gt; 5,
+                    'content' =&gt; 'Nicolas',
+                ],
+            ],
         ],
     ]
 );
@@ -2859,9 +2471,16 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'http://localhost:8000/api/column/18'
+url = 'http://localhost/api/document/1'
 payload = {
-    "value": "qduwbhk"
+    "name": "My first Document",
+    "column": [
+        {
+            "id": 1,
+            "rel_id": 5,
+            "content": "Nicolas"
+        }
+    ]
 }
 headers = {
   'Content-Type': 'application/json',
@@ -2873,57 +2492,60 @@ response.json()</code></pre></div>
 
 </span>
 
-<span id="example-responses-PUTapi-column--id-">
-</span>
-<span id="execution-results-PUTapi-column--id-" hidden>
+<span id="example-responses-PUTapi-document--id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;id&quot;: 1,
+    &quot;created_at&quot;: &quot;2023-08-16T22:35:09.000000Z&quot;,
+    &quot;updated_at&quot;: &quot;2023-08-16T23:18:06.000000Z&quot;,
+    &quot;name&quot;: &quot;My first document&quot;,
+    &quot;document_types_id&quot;: 1,
+    &quot;data&quot;: [
+        {
+            &quot;name&quot;: &quot;First name&quot;,
+            &quot;content&quot;: &quot;Yasmin&quot;,
+            &quot;rel_id&quot;: 1
+        }
+    ]
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-PUTapi-document--id-" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-PUTapi-column--id-"></span>:
+                id="execution-response-status-PUTapi-document--id-"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-PUTapi-column--id-"
+    <pre class="json"><code id="execution-response-content-PUTapi-document--id-"
       data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
 </span>
-<span id="execution-error-PUTapi-column--id-" hidden>
+<span id="execution-error-PUTapi-document--id-" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-PUTapi-column--id-">
+    <pre><code id="execution-error-message-PUTapi-document--id-">
 
 Tip: Check that you&#039;re properly connected to the network.
 If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
 You can check the Dev Tools console for debugging information.</code></pre>
 </span>
-<form id="form-PUTapi-column--id-" data-method="PUT"
-      data-path="api/column/{id}"
+<form id="form-PUTapi-document--id-" data-method="PUT"
+      data-path="api/document/{id}"
       data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('PUTapi-column--id-', this);">
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-document--id-', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-PUTapi-column--id-"
-                    onclick="tryItOut('PUTapi-column--id-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-PUTapi-column--id-"
-                    onclick="cancelTryOut('PUTapi-column--id-');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-PUTapi-column--id-"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
             </h3>
             <p>
             <small class="badge badge-darkblue">PUT</small>
-            <b><code>api/column/{id}</code></b>
+            <b><code>api/document/{id}</code></b>
         </p>
             <p>
             <small class="badge badge-purple">PATCH</small>
-            <b><code>api/column/{id}</code></b>
+            <b><code>api/document/{id}</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
@@ -2931,7 +2553,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="PUTapi-column--id-"
+                              name="Content-Type"                data-endpoint="PUTapi-document--id-"
                value="application/json"
                data-component="header">
     <br>
@@ -2942,7 +2564,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="PUTapi-column--id-"
+                              name="Accept"                data-endpoint="PUTapi-document--id-"
                value="application/json"
                data-component="header">
     <br>
@@ -2954,58 +2576,263 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <small>integer</small>&nbsp;
  &nbsp;
                 <input type="number" style="display: none"
-               step="any"               name="id"                data-endpoint="PUTapi-column--id-"
-               value="18"
+               step="any"               name="id"                data-endpoint="PUTapi-document--id-"
+               value="1"
                data-component="url">
     <br>
-<p>The ID of the column. Example: <code>18</code></p>
+<p>The ID of the document. Example: <code>1</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>value</code></b>&nbsp;&nbsp;
+            <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
 <small>string</small>&nbsp;
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
-                              name="value"                data-endpoint="PUTapi-column--id-"
-               value="qduwbhk"
+                              name="name"                data-endpoint="PUTapi-document--id-"
+               value="My first Document"
                data-component="body">
     <br>
-<p>Must be at least 3 characters. Example: <code>qduwbhk</code></p>
+<p>An unique name of the document. Example: <code>My first Document</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>document_types_id</code></b>&nbsp;&nbsp;
+        <details>
+            <summary style="padding-bottom: 10px;">
+                <b style="line-height: 2;"><code>column</code></b>&nbsp;&nbsp;
+<small>object[]</small>&nbsp;
+ &nbsp;
+<br>
+<p>List of Column id and content</p>
+            </summary>
+                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="column.0.id"                data-endpoint="PUTapi-document--id-"
+               value="1"
+               data-component="body">
+    <br>
+<p>An valid column_id of the same document type, required if it's a new info. Example: <code>1</code></p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>rel_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="column.0.rel_id"                data-endpoint="PUTapi-document--id-"
+               value="5"
+               data-component="body">
+    <br>
+<p>An valid column_document id, required if it's updating an existing info.
+this can be retrieved using the get document/{id} endpoint can bem Example: <code>5</code></p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>content</code></b>&nbsp;&nbsp;
 <small>string</small>&nbsp;
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
-                              name="document_types_id"                data-endpoint="PUTapi-column--id-"
-               value=""
+                              name="column.0.content"                data-endpoint="PUTapi-document--id-"
+               value="Nicolas"
                data-component="body">
     <br>
-
+<p>The info that will be stored, required if it's creating/updating a document info. Example: <code>Nicolas</code></p>
+                    </div>
+                                    </details>
         </div>
         </form>
 
-                    <h2 id="endpoints-DELETEapi-column--id-">Remove the specified resource from storage.</h2>
+                    <h2 id="documents-DELETEapi-document--id-">Remove the specified document.</h2>
 
 <p>
 </p>
 
+<aside class="warning">Document IS NOT softdeleted. ❗️</aside>
+<p>You can delete only a column data of the document
+using rel_id =&gt; column_document relationship id, this can be retrieved using the get document/{id} endpoint</p>
+<p>using rel_id will not trigger the document delete</p>
 
-
-<span id="example-requests-DELETEapi-column--id-">
+<span id="example-requests-DELETEapi-document--id-">
 <blockquote>Example request:</blockquote>
 
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost:8000/api/column/4" \
+    "http://localhost/api/document/9" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"rel_id\": 9
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/document/9"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "rel_id": 9
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;delete(
+    'http://localhost/api/document/9',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'rel_id' =&gt; 9,
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+
+<div class="python-example">
+    <pre><code class="language-python">import requests
+import json
+
+url = 'http://localhost/api/document/9'
+payload = {
+    "rel_id": 9
+}
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request('DELETE', url, headers=headers, json=payload)
+response.json()</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-document--id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Document deleted successfully!!&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-DELETEapi-document--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-document--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-document--id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-document--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-document--id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-DELETEapi-document--id-" data-method="DELETE"
+      data-path="api/document/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-document--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/document/{id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="DELETEapi-document--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="DELETEapi-document--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="id"                data-endpoint="DELETEapi-document--id-"
+               value="9"
+               data-component="url">
+    <br>
+<p>The id of the document. Example: <code>9</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>rel_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="rel_id"                data-endpoint="DELETEapi-document--id-"
+               value="9"
+               data-component="body">
+    <br>
+<p>The column_document relationship id Example: <code>9</code></p>
+        </div>
+        </form>
+
+                    <h2 id="documents-GETapi-document--id--download">Download one document</h2>
+
+<p>
+</p>
+
+<p>This endpont will download a document with all it's values as a pdf</p>
+
+<span id="example-requests-GETapi-document--id--download">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/document/1/download" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/column/4"
+    "http://localhost/api/document/1/download"
 );
 
 const headers = {
@@ -3014,15 +2841,15 @@ const headers = {
 };
 
 fetch(url, {
-    method: "DELETE",
+    method: "GET",
     headers,
 }).then(response =&gt; response.json());</code></pre></div>
 
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$response = $client-&gt;delete(
-    'http://localhost:8000/api/column/4',
+$response = $client-&gt;get(
+    'http://localhost/api/document/1/download',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'application/json',
@@ -3038,64 +2865,54 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'http://localhost:8000/api/column/4'
+url = 'http://localhost/api/document/1/download'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
 }
 
-response = requests.request('DELETE', url, headers=headers)
+response = requests.request('GET', url, headers=headers)
 response.json()</code></pre></div>
 
 </span>
 
-<span id="example-responses-DELETEapi-column--id-">
-</span>
-<span id="execution-results-DELETEapi-column--id-" hidden>
+<span id="example-responses-GETapi-document--id--download">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">The Document formatted in a pretty pdf</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-document--id--download" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-DELETEapi-column--id-"></span>:
+                id="execution-response-status-GETapi-document--id--download"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-DELETEapi-column--id-"
+    <pre class="json"><code id="execution-response-content-GETapi-document--id--download"
       data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
 </span>
-<span id="execution-error-DELETEapi-column--id-" hidden>
+<span id="execution-error-GETapi-document--id--download" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-DELETEapi-column--id-">
+    <pre><code id="execution-error-message-GETapi-document--id--download">
 
 Tip: Check that you&#039;re properly connected to the network.
 If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
 You can check the Dev Tools console for debugging information.</code></pre>
 </span>
-<form id="form-DELETEapi-column--id-" data-method="DELETE"
-      data-path="api/column/{id}"
+<form id="form-GETapi-document--id--download" data-method="GET"
+      data-path="api/document/{id}/download"
       data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-column--id-', this);">
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-document--id--download', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-DELETEapi-column--id-"
-                    onclick="tryItOut('DELETEapi-column--id-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-DELETEapi-column--id-"
-                    onclick="cancelTryOut('DELETEapi-column--id-');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-DELETEapi-column--id-"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
             </h3>
             <p>
-            <small class="badge badge-red">DELETE</small>
-            <b><code>api/column/{id}</code></b>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/document/{id}/download</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
@@ -3103,7 +2920,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="DELETEapi-column--id-"
+                              name="Content-Type"                data-endpoint="GETapi-document--id--download"
                value="application/json"
                data-component="header">
     <br>
@@ -3114,7 +2931,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="DELETEapi-column--id-"
+                              name="Accept"                data-endpoint="GETapi-document--id--download"
                value="application/json"
                data-component="header">
     <br>
@@ -3126,11 +2943,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <small>integer</small>&nbsp;
  &nbsp;
                 <input type="number" style="display: none"
-               step="any"               name="id"                data-endpoint="DELETEapi-column--id-"
-               value="4"
+               step="any"               name="id"                data-endpoint="GETapi-document--id--download"
+               value="1"
                data-component="url">
     <br>
-<p>The ID of the column. Example: <code>4</code></p>
+<p>The ID of the document. Example: <code>1</code></p>
             </div>
                     </form>
 

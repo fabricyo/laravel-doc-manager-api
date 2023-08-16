@@ -1,0 +1,423 @@
+name: Documents
+description: |-
+
+  APIs for managing Documents
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/document
+    metadata:
+      groupName: Documents
+      groupDescription: |-
+
+        APIs for managing Documents
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Display a listing of the Documents.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '[{"id":1,"created_at":"2023-08-16T22:35:09.000000Z","updated_at":"2023-08-16T23:18:06.000000Z","name":"My first document","document_types_id":1,"document_type":{"id":1,"created_at":"2023-08-16T22:03:20.000000Z","updated_at":"2023-08-16T22:12:53.000000Z","deleted_at":"2023-08-16T22:12:53.000000Z","name":"Personal Info","active":0}},{"id":2,"created_at":"2023-08-16T22:36:32.000000Z","updated_at":"2023-08-16T22:36:32.000000Z","name":"My second document","document_types_id":1,"document_type":{"id":1,"created_at":"2023-08-16T22:03:20.000000Z","updated_at":"2023-08-16T22:12:53.000000Z","deleted_at":"2023-08-16T22:12:53.000000Z","name":"Personal Info","active":0}},{"id":3,"created_at":"2023-08-16T22:36:49.000000Z","updated_at":"2023-08-16T22:36:49.000000Z","name":"My third document","document_types_id":1,"document_type":{"id":1,"created_at":"2023-08-16T22:03:20.000000Z","updated_at":"2023-08-16T22:12:53.000000Z","deleted_at":"2023-08-16T22:12:53.000000Z","name":"Personal Info","active":0}}]'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '57'
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/document
+    metadata:
+      groupName: Documents
+      groupDescription: |-
+
+        APIs for managing Documents
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Store a new Document.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'An unique name of the document.'
+        required: true
+        example: 'My first Document'
+        type: string
+        custom: []
+      document_types_id:
+        name: document_types_id
+        description: 'An valid document type id.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+      column:
+        name: column
+        description: 'List of Column id and content'
+        required: true
+        example:
+          - []
+        type: 'object[]'
+        custom: []
+      'column[].id':
+        name: 'column[].id'
+        description: 'An valid column_id of the same document type.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+      'column[].content':
+        name: 'column[].content'
+        description: 'The info that will be stored.'
+        required: true
+        example: Nicolas
+        type: string
+        custom: []
+    cleanBodyParameters:
+      name: 'My first Document'
+      document_types_id: 1
+      column:
+        -
+          id: 1
+          content: Nicolas
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+          "message": "Document created successfully!!",
+          "data": {
+          "name": "My fourth document",
+          "document_types_id": "1",
+          "updated_at": "2023-08-16T22:37:26.000000Z",
+          "created_at": "2023-08-16T22:37:26.000000Z",
+          "id": 4
+          }
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/document/{id}'
+    metadata:
+      groupName: Documents
+      groupDescription: |-
+
+        APIs for managing Documents
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Display the specified document.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: |-
+          The document id
+
+          <aside class="notice">rel_id of each data, is what you use to update the document data. 👍🏻</aside>
+        required: true
+        example: 18
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 18
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+          "id": 1,
+          "created_at": "2023-08-16T22:35:09.000000Z",
+          "updated_at": "2023-08-16T22:35:09.000000Z",
+          "name": "My first document",
+          "document_types_id": 1,
+          "data": [
+          {
+          "name": "First name",
+          "content": "Jonh",
+          "rel_id": 1
+          }
+          ],
+          "document_type": {
+          "id": 1,
+          "created_at": "2023-08-16T22:03:20.000000Z",
+          "updated_at": "2023-08-16T22:12:53.000000Z",
+          "deleted_at": "2023-08-16T22:12:53.000000Z",
+          "name": "Personal Info",
+          "active": 0
+          }
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/document/{id}'
+    metadata:
+      groupName: Documents
+      groupDescription: |-
+
+        APIs for managing Documents
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update the specified document.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the document.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'An unique name of the document.'
+        required: false
+        example: 'My first Document'
+        type: string
+        custom: []
+      column:
+        name: column
+        description: 'List of Column id and content'
+        required: true
+        example:
+          - []
+        type: 'object[]'
+        custom: []
+      'column[].id':
+        name: 'column[].id'
+        description: "An valid column_id of the same document type, required if it's a new info."
+        required: false
+        example: 1
+        type: integer
+        custom: []
+      'column[].rel_id':
+        name: 'column[].rel_id'
+        description: |-
+          An valid column_document id, required if it's updating an existing info.
+          this can be retrieved using the get document/{id} endpoint can bem
+        required: false
+        example: 5
+        type: integer
+        custom: []
+      'column[].content':
+        name: 'column[].content'
+        description: "The info that will be stored, required if it's creating/updating a document info."
+        required: false
+        example: Nicolas
+        type: string
+        custom: []
+    cleanBodyParameters:
+      name: 'My first Document'
+      column:
+        -
+          id: 1
+          rel_id: 5
+          content: Nicolas
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+          "id": 1,
+          "created_at": "2023-08-16T22:35:09.000000Z",
+          "updated_at": "2023-08-16T23:18:06.000000Z",
+          "name": "My first document",
+          "document_types_id": 1,
+          "data": [
+          {
+          "name": "First name",
+          "content": "Yasmin",
+          "rel_id": 1
+          }
+          ]
+           }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/document/{id}'
+    metadata:
+      groupName: Documents
+      groupDescription: |-
+
+        APIs for managing Documents
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Remove the specified document.'
+      description: |-
+        <aside class="warning">Document IS NOT softdeleted. ❗️</aside>
+
+        You can delete only a column data of the document
+        using rel_id => column_document relationship id, this can be retrieved using the get document/{id} endpoint
+
+        using rel_id will not trigger the document delete
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The id of the document.'
+        required: true
+        example: 9
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 9
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      rel_id:
+        name: rel_id
+        description: 'The column_document relationship id'
+        required: false
+        example: 9
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      rel_id: 9
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+          "message": "Document deleted successfully!!"
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/document/{id}/download'
+    metadata:
+      groupName: Documents
+      groupDescription: |-
+
+        APIs for managing Documents
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Download one document'
+      description: "This endpont will download a document with all it's values as a pdf"
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the document.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: 'The Document formatted in a pretty pdf'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

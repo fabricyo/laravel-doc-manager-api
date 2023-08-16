@@ -117,7 +117,7 @@ class DocTypeController extends Controller
     /**
      * Remove the specified document type from storage.
      *
-     * <aside class="warning">Document Type is softdeleted. ❗️</aside>
+     * <aside>Document Type is softdeleted. ❗️</aside>
      *
      * @response {
      * "message": "Document type deleted successfully!!"

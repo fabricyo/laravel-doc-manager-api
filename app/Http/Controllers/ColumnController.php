@@ -121,7 +121,7 @@ class ColumnController extends Controller
     /**
      * Remove the specified column from storage.
      *
-     * <aside class="warning">Column is softdeleted. ❗️</aside>
+     * <aside>Column is softdeleted. ❗️</aside>
      *
      * @response {
      * "message": "Column deleted successfully!!"

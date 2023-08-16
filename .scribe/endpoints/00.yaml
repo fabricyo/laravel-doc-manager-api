@@ -1,52 +1,17 @@
-name: Endpoints
-description: ''
+name: 'Document Types'
+description: |-
+
+  APIs for managing the Documents Types, the base of the API
 endpoints:
-  -
-    httpMethods:
-      - GET
-    uri: api/user
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 401
-        content: '{"message":"Unauthenticated."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: '*'
-        description: null
-        custom: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
   -
     httpMethods:
       - GET
     uri: api/doctype
     metadata:
-      groupName: Endpoints
-      groupDescription: ''
+      groupName: 'Document Types'
+      groupDescription: |-
+
+        APIs for managing the Documents Types, the base of the API
       subgroup: ''
       subgroupDescription: ''
       title: 'Display a listing of the resource.'
@@ -86,11 +51,13 @@ endpoints:
       - POST
     uri: api/doctype
     metadata:
-      groupName: Endpoints
-      groupDescription: ''
+      groupName: 'Document Types'
+      groupDescription: |-
+
+        APIs for managing the Documents Types, the base of the API
       subgroup: ''
       subgroupDescription: ''
-      title: 'Store a newly created resource in storage.'
+      title: 'Store a new document type.'
       description: ''
       authenticated: false
       custom: []
@@ -104,164 +71,37 @@ endpoints:
     bodyParameters:
       name:
         name: name
-        description: 'Must be at least 3 characters.'
+        description: 'An unique name of the document type.'
         required: true
-        example: kfzqgicjlzpmnr
+        example: 'Personal Info'
         type: string
         custom: []
       active:
         name: active
-        description: ''
+        description: 'If the document is to be created deactivated.'
         required: false
         example: false
         type: boolean
         custom: []
     cleanBodyParameters:
-      name: kfzqgicjlzpmnr
+      name: 'Personal Info'
       active: false
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
-    uri: 'api/doctype/{id}'
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Display the specified resource.'
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the doctype.'
-        required: true
-        example: ut
-        type: string
-        custom: []
-    cleanUrlParameters:
-      id: ut
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
     fileParameters: []
     responses:
       -
-        status: 400
-        content: '{"error":"document type not found"}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '58'
-          access-control-allow-origin: '*'
-        description: null
-        custom: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - PUT
-      - PATCH
-    uri: 'api/doctype/{id}'
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Update the specified resource in storage.'
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the doctype.'
-        required: true
-        example: ut
-        type: string
-        custom: []
-    cleanUrlParameters:
-      id: ut
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      name:
-        name: name
+        status: 200
+        content: |-
+          {
+           "message": "Document type created successfully!!",
+           "data": {
+           "name": "Personal Info",
+           "updated_at": "2023-08-16T22:03:20.000000Z",
+           "created_at": "2023-08-16T22:03:20.000000Z",
+           "id": 1
+          }
+        headers: []
         description: ''
-        required: false
-        example: null
-        type: string
         custom: []
-      active:
-        name: active
-        description: ''
-        required: false
-        example: false
-        type: boolean
-        custom: []
-    cleanBodyParameters:
-      active: false
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - DELETE
-    uri: 'api/doctype/{id}'
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Remove the specified resource from storage.'
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the doctype.'
-        required: true
-        example: vitae
-        type: string
-        custom: []
-    cleanUrlParameters:
-      id: vitae
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
     responseFields: []
     auth: []
     controller: null
@@ -271,21 +111,31 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: api/column
+    uri: 'api/doctype/{id}'
     metadata:
-      groupName: Endpoints
-      groupDescription: ''
+      groupName: 'Document Types'
+      groupDescription: |-
+
+        APIs for managing the Documents Types, the base of the API
       subgroup: ''
       subgroupDescription: ''
-      title: 'Display a listing of the resource.'
+      title: 'Display the specified document type.'
       description: ''
       authenticated: false
       custom: []
     headers:
       Content-Type: application/json
       Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
+    urlParameters:
+      id:
+        name: id
+        description: 'The document type id'
+        required: true
+        example: 12
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 12
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -294,109 +144,17 @@ endpoints:
     responses:
       -
         status: 200
-        content: '[]'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '57'
-          access-control-allow-origin: '*'
-        description: null
-        custom: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/column
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Store a newly created resource in storage.'
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      name:
-        name: name
-        description: 'Must be at least 3 characters.'
-        required: true
-        example: dyaa
-        type: string
-        custom: []
-      document_types_id:
-        name: document_types_id
+        content: |-
+          {
+          "id": 1,
+          "created_at": "2023-08-16T22:03:20.000000Z",
+          "updated_at": "2023-08-16T22:03:20.000000Z",
+          "deleted_at": null,
+          "name": "Personal Info",
+          "active": 1
+          }
+        headers: []
         description: ''
-        required: true
-        example: molestias
-        type: string
-        custom: []
-    cleanBodyParameters:
-      name: dyaa
-      document_types_id: molestias
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
-    uri: 'api/column/{id}'
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Display the specified resource.'
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the column.'
-        required: true
-        example: 17
-        type: integer
-        custom: []
-    cleanUrlParameters:
-      id: 17
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 400
-        content: '{"error":"Column not found"}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '56'
-          access-control-allow-origin: '*'
-        description: null
         custom: []
     responseFields: []
     auth: []
@@ -408,13 +166,15 @@ endpoints:
     httpMethods:
       - PUT
       - PATCH
-    uri: 'api/column/{id}'
+    uri: 'api/doctype/{id}'
     metadata:
-      groupName: Endpoints
-      groupDescription: ''
+      groupName: 'Document Types'
+      groupDescription: |-
+
+        APIs for managing the Documents Types, the base of the API
       subgroup: ''
       subgroupDescription: ''
-      title: 'Update the specified resource in storage.'
+      title: 'Update the specified document type.'
       description: ''
       authenticated: false
       custom: []
@@ -424,34 +184,49 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the column.'
+        description: 'The ID of the doctype.'
         required: true
-        example: 18
-        type: integer
+        example: suscipit
+        type: string
         custom: []
     cleanUrlParameters:
-      id: 18
+      id: suscipit
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      value:
-        name: value
-        description: 'Must be at least 3 characters.'
+      name:
+        name: name
+        description: 'An Unique name of the document type.'
         required: false
-        example: qduwbhk
+        example: 'Personal Info'
         type: string
         custom: []
-      document_types_id:
-        name: document_types_id
-        description: ''
+      active:
+        name: active
+        description: 'Toggle documentation type.'
         required: false
-        example: null
-        type: string
+        example: false
+        type: boolean
         custom: []
     cleanBodyParameters:
-      value: qduwbhk
+      name: 'Personal Info'
+      active: false
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+          "id": 1,
+          "created_at": "2023-08-16T22:03:20.000000Z",
+          "updated_at": "2023-08-16T22:09:28.000000Z",
+          "deleted_at": null,
+          "name": "Personal Info",
+          "active": "0"
+          }
+        headers: []
+        description: ''
+        custom: []
     responseFields: []
     auth: []
     controller: null
@@ -461,14 +236,16 @@ endpoints:
   -
     httpMethods:
       - DELETE
-    uri: 'api/column/{id}'
+    uri: 'api/doctype/{id}'
     metadata:
-      groupName: Endpoints
-      groupDescription: ''
+      groupName: 'Document Types'
+      groupDescription: |-
+
+        APIs for managing the Documents Types, the base of the API
       subgroup: ''
       subgroupDescription: ''
-      title: 'Remove the specified resource from storage.'
-      description: ''
+      title: 'Remove the specified document type from storage.'
+      description: '<aside>Document Type is softdeleted. ❗️</aside>'
       authenticated: false
       custom: []
     headers:
@@ -477,19 +254,28 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the column.'
+        description: 'The ID of the doctype.'
         required: true
-        example: 4
-        type: integer
+        example: excepturi
+        type: string
         custom: []
     cleanUrlParameters:
-      id: 4
+      id: excepturi
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+          "message": "Document type deleted successfully!!"
+          }
+        headers: []
+        description: ''
+        custom: []
     responseFields: []
     auth: []
     controller: null
