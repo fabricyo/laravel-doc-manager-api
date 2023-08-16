@@ -1,6 +1,6 @@
 #Meu projeto de teste
 
-- ```git clone```
+- ```git clone https://github.com/fabricyo/laravel-doc-manager-api.git```
 
 
 - ```docker-compose up -d --build```
