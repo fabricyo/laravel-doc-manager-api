@@ -2,27 +2,34 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Column;
 use App\Models\ColumnDocument;
 use App\Models\Document;
-use App\Models\DocumentType;
 use App\Rules\RightTypeOfColums;
-use Closure;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Validation\Rule;
 use Barryvdh\DomPDF\Facade\Pdf;
 
 
-
+/**
+ * @group Documents
+ *
+ * APIs for managing Documents
+ */
 class DocumentController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Index
+     *
+     * This endpoint is used to see all documents in the system.
+     *
+     * @response scenario="JsonResponse" {
+     * "data": ['all the documents in the system'],
+     * }
      */
+
     public function index(): \Illuminate\Http\JsonResponse
     {
         return response()->json(Document::with(['document_type'])->get());
@@ -83,6 +90,15 @@ class DocumentController extends Controller
         }
     }
 
+    /**
+     * Download one document
+     *
+     * This endpont will download an document with all it's values as a pdf
+     *
+     * @bodyParam id The Document id
+     *
+     * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\Response
+     */
     public function download(Request $request, $id)
     {
         try {

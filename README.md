@@ -1,17 +1,26 @@
 #Meu projeto de teste
 
-git clone 
+- ```git clone```
 
-docker-compose up -d --build
 
-docker-compose down -v
+- ```docker-compose up -d --build```
 
-para acessar o app
-http://localhost:8000
 
-PhpMyAdmin
-http://localhost:8081
-para logar:
+- ```docker exec Serve cp .env.example .env```
+
+
+- ```docker exec Serve php artisan key:generate```
+
+
+- ```docker exec Serve php artisan migrate```
+
+App URL: http://localhost:8000
+
+Docs: http://localhost:8000/docs
+
+PhpMyAdmin: http://localhost:8081
+
+PhpMyAdmin logar:
  - database:
    - db
  - login:
