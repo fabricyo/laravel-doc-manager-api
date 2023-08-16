@@ -1,4 +1,4 @@
-#Meu projeto de teste
+# Meu projeto de teste
 
 - ```git clone https://github.com/fabricyo/laravel-doc-manager-api.git```
 
@@ -20,7 +20,7 @@ Docs: http://localhost:8000/docs
 
 PhpMyAdmin: http://localhost:8081
 
-PhpMyAdmin logar:
+PhpMyAdmin login:
  - database:
    - db
  - login:
@@ -29,4 +29,14 @@ PhpMyAdmin logar:
    - notSecureChangeMe
 
 
-At json request, add to headers, in the Accept key, the value application/json
+## Using Postman
+Add to headers, in the Accept key, the value application/json
+
+### Creating a document
+![create_doc.png](Prints%2Fcreate_doc.png)
+
+### Updating a document
+![update_doc.png](Prints%2Fupdate_doc.png)
+
+### Downloading a document
+![download_pdf.png](Prints%2Fdownload_pdf.png)
