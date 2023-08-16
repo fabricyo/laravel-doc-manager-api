@@ -32,6 +32,9 @@ PhpMyAdmin login:
 ## Using Postman
 Add to headers, in the Accept key, the value application/json
 
+
+Managing the document is a little bit complex, so this some examples
+
 ### Creating a document
 ![create_doc.png](Prints%2Fcreate_doc.png)
 
