@@ -1,18 +1,29 @@
-# Meu projeto de teste
+# My laravel api project
 
-- ```git clone https://github.com/fabricyo/laravel-doc-manager-api.git```
+This is just a simple laravel api project,
+I'm not very used to write microservices, 
+so I know that it might have a lot of mistakes here,
+so please, you can point them if you want.
 
+```
+git clone https://github.com/fabricyo/laravel-doc-manager-api.git
+```
 
-- ```docker-compose up -d --build```
+```
+docker-compose up -d --build
+```
 
+```
+docker exec Serve cp .env.example .env
+```
 
-- ```docker exec Serve cp .env.example .env```
+```
+docker exec Serve php artisan key:generate
+```
 
-
-- ```docker exec Serve php artisan key:generate```
-
-
-- ```docker exec Serve php artisan migrate```
+```
+docker exec Serve php artisan migrate
+```
 
 App URL: http://localhost:8000
 
@@ -31,6 +42,15 @@ PhpMyAdmin login:
 ## Document
 The document info is based on the column_document relationship
 You can use any columns that you want, but, only if it's of the same type of the document
+
+## Tests
+If you want, there's some simple tests. 
+You can run it with:
+
+```
+docker exec Serve php artisan test
+```
+![tests.png](Prints%2Ftests.png)
 
 ## Using Postman
 - Add to headers, in the Accept key, the value application/json
