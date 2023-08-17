@@ -17,12 +17,12 @@ class DocumentType extends Model
 
     protected $fillable = ['name', 'active'];
 
-    public function documents() : HasMany
+    public function documents(): HasMany
     {
         return $this->hasMany(Document::class, 'document_types_id');
     }
 
-    public function columns() : HasMany
+    public function columns(): HasMany
     {
         return $this->hasMany(Column::class, 'document_types_id');
     }

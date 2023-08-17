@@ -3,7 +3,6 @@
 use App\Http\Controllers\ColumnController;
 use App\Http\Controllers\DocTypeController;
 use App\Http\Controllers\DocumentController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*

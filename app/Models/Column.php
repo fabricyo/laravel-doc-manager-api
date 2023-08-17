@@ -17,7 +17,8 @@ class Column extends Model
 
     protected $fillable = ['name', 'document_types_id'];
 
-    public function document_type(): BelongsTo {
+    public function document_type(): BelongsTo
+    {
         return $this->belongsTo(DocumentType::class, 'document_types_id');
     }
 }

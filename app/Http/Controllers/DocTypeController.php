@@ -19,7 +19,7 @@ class DocTypeController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(): \Illuminate\Http\JsonResponse
     {
         return response()->json(DocumentType::with('columns')->get());
     }
@@ -38,20 +38,20 @@ class DocTypeController extends Controller
      *  "id": 1
      * }
      */
-    public function store(Request $request)
+    public function store(Request $request): \Illuminate\Http\JsonResponse
     {
         $this->validate($request, [
             'name' => 'required|unique:document_types|min:3',
             'active' => 'boolean'
         ]);
         //Validation has passed
-        try{
+        try {
             $model = DocumentType::create($request->only(['name', 'active']));
             return response()->json([
                 'message' => 'Document type created successfully!!',
                 'data' => $model,
             ]);
-        } catch (\Exception $e){
+        } catch (\Exception $e) {
             Log::error($e);
             return response()->json(['error' => 'server error, try again'], 500);
         }
@@ -70,14 +70,14 @@ class DocTypeController extends Controller
      * "active": 1
      * }
      */
-    public function show(string $id)
+    public function show(string $id): \Illuminate\Http\JsonResponse
     {
         try {
             $model = DocumentType::findOrFail($id);
             return response()->json($model);
-        } catch(ModelNotFoundException $e){
+        } catch (ModelNotFoundException $e) {
             return response()->json(['error' => 'document type not found'], 400);
-        } catch (\Exception $e){
+        } catch (\Exception $e) {
             Log::error($e);
             return response()->json(['error' => 'server error, try again'], 500);
         }
@@ -96,19 +96,19 @@ class DocTypeController extends Controller
      * "active": "0"
      * }
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, string $id): \Illuminate\Http\JsonResponse
     {
         $this->validate($request, [
-            'name' => 'min:3|unique:document_types,name,'. $id,
+            'name' => 'min:3|unique:document_types,name,' . $id,
             'active' => 'bool'
         ]);
-        try{
+        try {
             $model = DocumentType::findOrFail($id);
             $model->fill($request->only(['name', 'active']))->update();
             return response()->json($model);
-        } catch(ModelNotFoundException $e){
+        } catch (ModelNotFoundException $e) {
             return response()->json(['error' => 'document type not found'], 400);
-        } catch (\Exception $e){
+        } catch (\Exception $e) {
             Log::error($e);
             return response()->json(['error' => 'server error, try again'], 500);
         }
@@ -123,21 +123,21 @@ class DocTypeController extends Controller
      * "message": "Document type deleted successfully!!"
      * }
      */
-    public function destroy(string $id)
+    public function destroy(string $id): \Illuminate\Http\JsonResponse
     {
-        try{
+        try {
             $model = DocumentType::findOrFail($id);
             $model->delete();
             return response()->json([
                 'message' => 'Document type deleted successfully!!',
             ]);
-        } catch(ModelNotFoundException $e){
+        } catch (ModelNotFoundException $e) {
             return response()->json(['error' => 'document type not found'], 400);
-        } catch (QueryException $e){
-            Log::error('Delete Document Type '. $e);
+        } catch (QueryException $e) {
+            Log::error('Delete Document Type ' . $e);
             return response()->json(['error' => "Couldn't delete the document type with id {$model->id}"], 400);
-        } catch (\Exception $e){
-            Log::error('Delete Document Type - '. $e);
+        } catch (\Exception $e) {
+            Log::error('Delete Document Type - ' . $e);
             return response()->json(['error' => 'server error, try again'], 500);
         }
     }

@@ -5,12 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\ColumnDocument;
 use App\Models\Document;
 use App\Rules\RightTypeOfColums;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Validation\Rule;
-use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Validation\ValidationException;
 
 
@@ -64,21 +64,21 @@ class DocumentController extends Controller
             'column.*.content' => 'required|string|min:3',
         ]);
         //Validation has passed
-        try{
+        try {
             $model = Document::create($request->only(['name', 'document_types_id']));
-            foreach ($request->input('column') as $column){
+            foreach ($request->input('column') as $column) {
                 $col_doc = ColumnDocument::create([
                     'column_id' => $column['id'],
                     'document_id' => $model->id,
                     'content' => $column['content'],
-                    ]);
+                ]);
             }
 
             return response()->json([
                 'message' => 'Document created successfully!!',
                 'data' => $model,
             ]);
-        } catch (\Exception $e){
+        } catch (\Exception $e) {
             Log::error($e);
             echo $e;
             return response()->json(['error' => 'server error, try again'], 500);
@@ -120,9 +120,9 @@ class DocumentController extends Controller
             $model = Document::with('document_type')->findOrFail($id);
             $model->data = $model->resumed();
             return response()->json($model);
-        } catch(ModelNotFoundException $e){
+        } catch (ModelNotFoundException $e) {
             return response()->json(['error' => 'Document not found'], 400);
-        } catch (\Exception $e){
+        } catch (\Exception $e) {
             Log::error($e);
             return response()->json(['error' => 'server error, try again'], 500);
         }
@@ -141,10 +141,10 @@ class DocumentController extends Controller
             $doc = Document::with('document_type')->findOrFail($id);
             $doc->data = $doc->resumed();
             $pdf = Pdf::loadView('document_as_pdf', ['doc' => $doc]);
-            return $pdf->download('invoice.pdf');
-        } catch(ModelNotFoundException $e){
+            return $pdf->download($doc->name . '.pdf');
+        } catch (ModelNotFoundException $e) {
             return response()->json(['error' => 'Document not found'], 400);
-        } catch (\Exception $e){
+        } catch (\Exception $e) {
             echo $e;
             return response()->json(['error' => 'server error'], 500);
         }
@@ -179,11 +179,11 @@ class DocumentController extends Controller
      */
     public function update(Request $request, string $id): \Illuminate\Http\JsonResponse
     {
-        try{
+        try {
             $model = Document::findOrFail($id);
             //As this is a complex many-to-many relationship, the validation must be as well
             $this->validate($request, [
-                'name' => 'min:3|unique:documents,name,'. $id,
+                'name' => 'min:3|unique:documents,name,' . $id,
                 'column' => 'array',
                 'column.*.rel_id' => [
                     'required_if:column.*.id,=,null',
@@ -200,22 +200,21 @@ class DocumentController extends Controller
                 'column.*.content' => [
                     'string',
                     'min:3',
-                    Rule::requiredIf(function() use ($request) {
+                    Rule::requiredIf(function () use ($request) {
                         return ($request->input('column.*.rel_id') || $request->input('column.*.id'));
                     })
                 ]
             ]);
             $model->fill($request->only(['name']))->update();
-            if($request->input('column')){
-                foreach ($request->input('column') as $column){
+            if ($request->input('column')) {
+                foreach ($request->input('column') as $column) {
                     //Validate if is update of a existing relationship, or adding a new one
                     // If the request is bad formatted, it does nothing
-                    if(isset($column['rel_id'])&& isset($column['content'])){
+                    if (isset($column['rel_id']) && isset($column['content'])) {
                         $col = ColumnDocument::find($column['rel_id']);
                         $col->content = $column['content'];
                         $col->update();
-                    }
-                    else if (isset($column['id']) && isset($column['content'])){
+                    } else if (isset($column['id']) && isset($column['content'])) {
                         ColumnDocument::create([
                             'column_id' => $column['id'],
                             'document_id' => $model->id,
@@ -230,11 +229,11 @@ class DocumentController extends Controller
 
             $model->data = $model->resumed();
             return response()->json($model);
-        } catch(ModelNotFoundException $e) {
+        } catch (ModelNotFoundException $e) {
             return response()->json(['error' => 'Document not found'], 400);
-        } catch(ValidationException $e){
+        } catch (ValidationException $e) {
             return response()->json($e->errors());
-        } catch (\Exception $e){
+        } catch (\Exception $e) {
             Log::error($e);
             return response()->json(['error' => 'server error, try again'], 500);
         }
@@ -260,28 +259,28 @@ class DocumentController extends Controller
      */
     public function destroy(Request $request, string $id): \Illuminate\Http\JsonResponse
     {
-        try{
+        try {
             $model = Document::findOrFail($id);
             //You only wants to delete a column_document relationship
-            if ($request->input('rel_id')){
+            if ($request->input('rel_id')) {
                 ColumnDocument::where('id', $request->input('rel_id'))->delete();
                 return response()->json([
                     'message' => 'Column Document relationship deleted successfully!!',
                 ]);
-            }else {
+            } else {
                 ColumnDocument::where('document_id', $id)->delete();
                 $model->delete();
                 return response()->json([
                     'message' => 'Document and columns deleted successfully!!',
                 ]);
             }
-        } catch(ModelNotFoundException $e){
+        } catch (ModelNotFoundException $e) {
             return response()->json(['error' => 'Document not found'], 400);
-        } catch (QueryException $e){
-            Log::error('Document'. $e);
+        } catch (QueryException $e) {
+            Log::error('Document' . $e);
             return response()->json(['error' => "Couldn't delete the Document or Column"], 400);
-        } catch (\Exception $e){
-            Log::error('Document - '. $e);
+        } catch (\Exception $e) {
+            Log::error('Document - ' . $e);
             return response()->json(['error' => 'server error, try again'], 500);
         }
     }

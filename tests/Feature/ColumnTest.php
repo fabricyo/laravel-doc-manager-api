@@ -2,11 +2,7 @@
 
 namespace Feature;
 
-use App\Models\DocumentType;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
-use Illuminate\Support\Facades\Log;
-use PhpParser\Comment\Doc;
 use Tests\TestCase;
 
 class ColumnTest extends TestCase
