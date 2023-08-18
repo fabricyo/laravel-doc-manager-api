@@ -9,12 +9,14 @@ so please, you can point them if you want.
 git clone https://github.com/fabricyo/laravel-doc-manager-api.git
 ```
 
+Go inside the project folder
+
 ```
-docker-compose up -d --build
+cp .env.example .env
 ```
 
 ```
-docker exec Serve cp .env.example .env
+docker-compose up -d --build
 ```
 
 ```
